@@ -1,7 +1,11 @@
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const firstOption = localStorage.getItem('firstOption');
+const selectedOption = ref(null);
+
 let options = [];
 let text = ref('');
 
@@ -18,6 +22,13 @@ if (firstOption === '행복') {
   options = ['불안1', '불안2', '불안3', '불안4'];
   text.value = '불안 선택한 사람의 질문';
 }
+
+const selectOption = (option) => {
+  selectedOption.value = option;
+  localStorage.setItem('secondption', selectedOption.value);
+  router.push("/page-4");
+};
+
 
 </script>
 

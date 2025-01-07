@@ -1,10 +1,15 @@
 <script setup>
 import { useRouter } from "vue-router";
+import { onMounted } from "vue";
 const router = useRouter();
 
 const onStart = () => {
   router.push("/page-2");
 };
+
+onMounted(() => {
+  localStorage.clear(); 
+});
 </script>
 
 <template>
