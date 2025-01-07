@@ -6,6 +6,6 @@
  5페이지
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>

@@ -3,9 +3,9 @@
 </script>
 
 <template>
- 1
+ 4페이지지
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
