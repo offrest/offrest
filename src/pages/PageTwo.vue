@@ -1,5 +1,19 @@
 <script setup>
+import { ref } from 'vue';
+import { useRouter } from "vue-router";
 
+const router = useRouter();
+
+const textInput = ref('');
+
+const saveName = () => {
+  if(textInput.value.trim() === '') {
+    alert('이름을 입력해주세요!');
+    return;
+  }
+  localStorage.setItem('userName', textInput.value);
+  router.push("/page-3");
+};
 </script>
 
 <template>
@@ -17,7 +31,11 @@
           </div>
           <span class="info active">※ 필수로 기재해 주셔야 합니다!</span>
 
-          <button type="submit" class="submit-btn">등록하기</button>
+          <button 
+            type="submit" 
+            class="submit-btn"
+            @click="saveName">등록하기
+          </button>
       </div>
     </div>
   </section>
