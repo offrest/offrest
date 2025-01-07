@@ -1,0 +1,157 @@
+@use "reset" as *;
+@use "util" as *;
+
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$bg-color: #000;
+
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: $bg-color;
+
+  font-family: 'SBAggroB', sans-serif;
+  line-height: 1;
+  letter-spacing: 0;
+  font-weight: 300;
+  color: #fff;
+
+  // S : common
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  span {
+    display: block;
+  }
+
+  button {
+    color: #fff;
+  }
+
+  input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+
+    &:invalid {
+      border: none;
+      border-color: transparent;
+    }
+  }
+
+  .container {
+  position: relative;
+  width: 100%;
+  max-width: 1366px;
+  min-width: 768px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: fv(40);
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: fv(40);
+    margin-left: fv(40);
+  }
+  .logo {
+    width: fv(120);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: fv(84);
+    border: 1px solid red;
+  }
+
+  .title {
+    font-size: fv(50);
+    line-height: lh(70, 50);
+  }
+  // E : common
+
+  // S : page-1
+  .start-btn {
+    position: relative;
+    font-size: fv(50);
+    margin-top: fv(200);
+    padding-right: fv(34);
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-60%);
+      background: url(../images/arrow_ico.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: fv(18);
+      height: fv(29);
+    }
+  }
+  // E : page-1
+
+  // S : page-2
+  .input-box {
+    margin-top: fv(80);
+    border-bottom: 1px solid #fff;
+    
+    > input {
+      width: fv(540);
+      padding: fv(8);
+      
+      font-size: fv(40);
+      color: #888;
+      text-align: center;
+    }
+  }
+
+  .info {
+    margin-top: fv(24);
+    font-size: fv(24);
+    color: #FF2F2F;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .submit-btn {
+    font-size: fv(40);
+    margin-top: fv(75);
+    border: fv(2) solid #fff;
+    border-radius: fv(50);
+    padding: fv(10) fv(32) fv(8);
+  }
+  // E : page-2
+}
+
+
+
+
