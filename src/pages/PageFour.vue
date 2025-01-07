@@ -25,8 +25,8 @@ if (firstOption === '행복') {
 
 const selectOption = (option) => {
   selectedOption.value = option;
-  localStorage.setItem('secondption', selectedOption.value);
-  router.push("/page-4");
+  localStorage.setItem('secondOption', selectedOption.value);
+  router.push("/page-6");
 };
 
 

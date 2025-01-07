@@ -1,11 +1,14 @@
 <script setup>
-  // const userName = localStorage.getItem('userName'); 
-  // 이게 로컬스토리지 이름 가져오는 코드 (page2 에서 저장함)
+  const userName = localStorage.getItem('userName'); 
+  const firstOption = localStorage.getItem('firstOption');
+  const secondOption = localStorage.getItem('secondOption');
   
 </script>
 
 <template>
- s
+ {{ userName }}님
+ {{ firstOption }}랑
+ {{ secondOption }} 선택 하셨네요
 </template>
 
 <style lang="scss" scoped>
