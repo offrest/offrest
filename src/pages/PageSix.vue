@@ -8,29 +8,29 @@ const resultsMap = {
   행복: {
     행복1: {
       name: '플리1',
-      youtube: 'https://youtube.com/example1',
+      youtube: '/path/to/image.png',
       qrCode: '/path/to/qrcode1.png',
     },
     행복2: {
       name: '플리2',
-      youtube: 'https://youtube.com/example2',
+      youtube: 'https://youtu.be/zsCWcd9OSIM?si=9uE_W5fNXEkUEfqI',
       qrCode: '/path/to/qrcode2.png',
     },
     행복3: {
       name: '플리3',
-      youtube: 'https://youtube.com/example3',
+      youtube: 'https://youtu.be/PMWItLXM3sU?si=fp5w30_H6qeSo1Ht',
       qrCode: '/path/to/qrcode3.png',
     },
     행복4: {
       name: '플리4',
-      youtube: 'https://youtube.com/example4',
+      youtube: 'https://youtu.be/x_rXYMvO6iA?si=fpAHGeTKG56jhXE6',
       qrCode: '/path/to/qrcode4.png',
     },
   },
   슬픔: {
     슬픔1: {
       name: '플리5',
-      youtube: 'https://youtube.com/example5',
+      youtube: 'https://youtu.be/PpsW1rWlq2Y?si=YJZD-qEDmh7KheBA',
       qrCode: '/path/to/qrcode5.png',
     },
     슬픔2: {
@@ -101,12 +101,19 @@ const result = resultsMap[firstOption]?.[secondOption];
 
 <template>
   <div v-if="result">
-    <p>{{  userName }}님</p>
-    <p>{{  firstOption }}과</p>
-    <p>{{  secondOption }}을 택하셨습니다.</p>
+    <p>{{ userName }}님</p>
+    <p>{{ firstOption }}과</p>
+    <p>{{ secondOption }}을 택하셨습니다.</p>
     <p>선택한 플리: {{ result.name }}</p>
-    <p><a :href="result.youtube" target="_blank">유튜브 링크</a></p>
-    <img :src="result.qrCode" alt="QR 코드" />
+    
+    <!-- 유튜브 영상 iframe 삽입 -->
+    <p>
+      <img :src="result.qrCode" alt="썸네일" />
+    </p>
+    
+    <p>
+      <img :src="result.qrCode" alt="QR 코드" />
+    </p>
   </div>
   <p v-else>결과 없음</p>
 </template>
