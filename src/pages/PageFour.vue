@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { useRouter } from "vue-router";
 
 const router = useRouter();
+
 const firstOption = localStorage.getItem('firstOption');
 const selectedOption = ref(null);
 
