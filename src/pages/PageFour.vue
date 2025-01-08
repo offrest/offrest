@@ -6,22 +6,27 @@ const router = useRouter();
 const firstOption = localStorage.getItem('firstOption');
 const selectedOption = ref(null);
 
-let options = [];
-let text = ref('');
+const optionData = {
+  행복: {
+    question: '행복 선택한 사람의 질문',
+    options: ['행복1', '행복2', '행복3', '행복4'],
+  },
+  슬픔: {
+    question: '슬픔 선택한 사람의 질문',
+    options: ['슬픔1', '슬픔2', '슬픔3', '슬픔4'],
+  },
+  평온: {
+    question: '평온 선택한 사람의 질문',
+    options: ['평온1', '평온2', '평온3', '평온4'],
+  },
+  불안: {
+    question: '불안 선택한 사람의 질문',
+    options: ['불안1', '불안2', '불안3', '불안4'],
+  },
+};
 
-if (firstOption === '행복') {
-  options = ['행복1', '행복2', '행복3', '행복4'];
-  text.value = '행복 선택한 사람의 질문';
-}else if (firstOption === '슬픔') {
-  options = ['슬픔1', '슬픔2', '슬픔3', '슬픔4'];
-  text.value = '슬픔 선택한 사람의 질문';
-}else if (firstOption === '평온') {
-  options = ['평온1', '평온2', '평온3', '평온4'];
-  text.value = '평온 선택한 사람의 질문';
-}else {
-  options = ['불안1', '불안2', '불안3', '불안4'];
-  text.value = '불안 선택한 사람의 질문';
-}
+const text = ref(optionData[firstOption]?.question || '질문 없음');
+const options = optionData[firstOption]?.options || [];
 
 const selectOption = (option) => {
   selectedOption.value = option;
