@@ -107,10 +107,10 @@ const result = resultsMap[firstOption]?.[secondOption];
         </div>
       </header>
 
-      <div class="content">
+      <div class="content content--pt">
         <div v-if="result">
           <p class="title">
-            <span class="user-name">{{ userName }}</span> 님을 위해 추천드립니다.
+            <span class="user-name">{{ userName }}</span>님을 위해 추천드립니다.
           </p>
 
           <!--
@@ -121,12 +121,12 @@ const result = resultsMap[firstOption]?.[secondOption];
 
           <div class="img-box">
             <!-- 유튜브 영상 iframe 삽입 -->
-            <div class="thumb-img">
+            <div class="img img-thumb">
               <img :src="result.qrCode" alt="썸네일" />
             </div>
 
             <!-- QR 코드 삽입 -->
-            <div class="code-img">
+            <div class="img img-code">
               <img :src="result.qrCode" alt="QR 코드" />
             </div>
           </div>
@@ -137,7 +137,7 @@ const result = resultsMap[firstOption]?.[secondOption];
 
         <button
           type="button"
-          class="rounded-btn"
+          class="reset-btn rounded-btn"
           @click="reset">처음으로
         </button>
       </div>

@@ -5,7 +5,7 @@
 <template>
   <section class="section">
     <div class="content">
-      <div class='sound-icon disabled'>
+      <div class='sound'>
         <div class='sound-wave'>
           <i class='bar'></i>
           <i class='bar'></i>

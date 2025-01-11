@@ -25,8 +25,11 @@ const saveName = () => {
         </div>
       </header>
 
-      <div class="content content--pb">
-        <p class="title">Q1. 이름이나 닉네임을 적어주세요.</p>
+      <div class="content content--pt">
+        <p class="title">
+          <span>Q1.</span>
+          <span>이름이나 닉네임을 적어주세요.</span>
+        </p>
 
         <div class="detail">
           <div class="input-box">
@@ -41,7 +44,7 @@ const saveName = () => {
 
           <button
             type="submit"
-            class="rounded-btn"
+            class="submit-btn rounded-btn"
             @click="saveName">등록하기
           </button>
         </div>

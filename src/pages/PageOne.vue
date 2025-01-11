@@ -21,8 +21,8 @@ onMounted(() => {
         </div>
       </header>
 
-      <div class="content content--pb">
-        <p class="title">이 음악이 당신에게 위로가 되었으면 좋겠습니다</p>
+      <div class="content content--pt">
+        <p class="title">이 음악이 당신에게 위로가 되었으면 좋겠습니다.</p>
 
         <div class="obj">
           <img src="../assets/images/obj-02.jpg" alt="음표" />

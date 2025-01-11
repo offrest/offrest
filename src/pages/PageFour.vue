@@ -46,7 +46,10 @@ const selectOption = (option) => {
       </header>
 
       <div class="content">
-        <p class="title">Q3. {{ text }}</p>
+        <p class="title">
+          <span>Q3.</span>
+          <span>{{ text }}</span>
+        </p>
 
         <div class="detail">
           <!-- 선택지 리스트 -->

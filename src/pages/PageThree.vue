@@ -31,7 +31,10 @@ onMounted(() => {
       </header>
 
       <div class="content">
-        <p class="title">Q2. 오늘의 기분은 어떠신가요?</p>
+        <p class="title">
+          <span>Q2.</span>
+          <span>오늘의 기분은 어떠신가요?</span>
+        </p>
 
         <div class="detail">
           <!-- 선택지 리스트 -->
