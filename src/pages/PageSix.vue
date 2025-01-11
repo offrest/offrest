@@ -1,6 +1,6 @@
 <script setup>
 
-const userName = localStorage.getItem('userName'); 
+const userName = localStorage.getItem('userName');
 const firstOption = localStorage.getItem('firstOption');
 const secondOption = localStorage.getItem('secondOption');
 
@@ -96,26 +96,53 @@ const resultsMap = {
 };
 
 const result = resultsMap[firstOption]?.[secondOption];
-
 </script>
 
 <template>
-  <div v-if="result">
-    <p>{{ userName }}님</p>
-    <p>{{ firstOption }}과</p>
-    <p>{{ secondOption }}을 택하셨습니다.</p>
-    <p>선택한 플리: {{ result.name }}</p>
-    
-    <!-- 유튜브 영상 iframe 삽입 -->
-    <p>
-      <img :src="result.qrCode" alt="썸네일" />
-    </p>
-    
-    <p>
-      <img :src="result.qrCode" alt="QR 코드" />
-    </p>
-  </div>
-  <p v-else>결과 없음</p>
+    <section class="section">
+    <div class="container">
+      <header>
+        <div class="logo">
+          <img src="../assets/images/logo.png" alt="OFFREST" />
+        </div>
+      </header>
+
+      <div class="content">
+        <div v-if="result">
+          <p class="title">
+            <span class="user-name">{{ userName }}</span> 님을 위해 추천드립니다.
+          </p>
+
+          <!--
+          <p>{{ firstOption }}과</p>
+          <p>{{ secondOption }}을 택하셨습니다.</p>
+          <p>선택한 플리: {{ result.name }}</p>
+          -->
+
+          <div class="img-box">
+            <!-- 유튜브 영상 iframe 삽입 -->
+            <div class="thumb-img">
+              <img :src="result.qrCode" alt="썸네일" />
+            </div>
+
+            <!-- QR 코드 삽입 -->
+            <div class="code-img">
+              <img :src="result.qrCode" alt="QR 코드" />
+            </div>
+          </div>
+        </div>
+        <p v-else>결과 없음</p>
+
+        <p class="desc">이 음악이 위로가 되었으면 좋겠습니다.</p>
+
+        <button
+          type="button"
+          class="rounded-btn"
+          @click="reset">처음으로
+        </button>
+      </div>
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>

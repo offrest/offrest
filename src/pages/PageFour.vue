@@ -34,32 +34,40 @@ const selectOption = (option) => {
   localStorage.setItem('secondOption', selectedOption.value);
   router.push("/page-6");
 };
-
-
 </script>
 
 <template>
- 4페이지
-  <!-- 시우야 클래스는 다 바꿔도 돼~~~~~~~~~~~ html도 가능 -->
-  <div class="page">
-    <p>{{ text }}</p> <!-- 여기는 동적으로 함! 앞에서 뭘 골랐는지에 따라 이것도 달라질테니까 -->
-    
-    <!-- 선택지 리스트 -->
-    <div class="options">
-      <button 
-        v-for="option in options" 
-        :key="option" 
-        :class="['option-btn', { active: selectedOption === option }]" 
-        @click="selectOption(option)"
-      >
-        {{ option }}&nbsp;&nbsp;
-      </button>
-    </div>
+  <section class="section">
+    <div class="container">
+      <header>
+        <div class="logo">
+          <img src="../assets/images/logo.png" alt="OFFREST" />
+        </div>
+      </header>
 
-    <div class="selected-option" v-if="selectedOption">
-      <p>선택된 옵션: {{ selectedOption }}</p>
+      <div class="content">
+        <p class="title">Q3. {{ text }}</p>
+
+        <div class="detail">
+          <!-- 선택지 리스트 -->
+          <div class="options">
+            <button
+              v-for="option in options"
+              :key="option"
+              :class="['option-btn', { active: selectedOption === option }]"
+              @click="selectOption(option)"
+            >
+              {{ option }}&nbsp;&nbsp;
+            </button>
+          </div>
+
+          <div class="selected-option" v-if="selectedOption">
+            <p>선택된 옵션: {{ selectedOption }}</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>

@@ -22,7 +22,7 @@
   }
 }
 
-$min-width: 786 !default;
+$min-width: 768 !default;
 $max-width: 1366 !default;
 
 @function fv($value) {
@@ -31,37 +31,6 @@ $max-width: 1366 !default;
   @return fluid($value * $ratio, $value, $min-width, $max-width);
 }
 
-@function unit($value, $unit: "px") {
-  @return string.unquote($value + $unit);
-}
-
-@function em($value, $base) {
-  @return unit(math.div($value, $base), "em");
-}
-
-@function rem($value, $base: 16) {
-  @return unit(math.div($value, $base), "rem");
-}
-
-@function vw($value, $viewport-width) {
-  @return unit(math.div($value, $viewport-width) * 100, "vw");
-}
-
-@function percent($value, $base) {
-  @return math.percentage(math.div($value, $base));
-}
-
 @function lh($value, $base) {
   @return math.div($value, $base);
 }
-
-// font-weight
-$thin: 100;
-$extra-light: 200;
-$light: 300;
-$regular: 400;
-$medium: 500;
-$semi-bold: 600;
-$bold: 700;
-$extra-bold: 800;
-$black: 900;
