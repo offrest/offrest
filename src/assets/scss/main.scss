@@ -1,5 +1,5 @@
 @use "reset" as *;
-@use "util" as *;
+@use "util" as * ;
 
 @font-face {
   font-family: 'SBAggroB';
@@ -21,6 +21,10 @@ $bg-color: #000;
 $light: 300;
 $medium: 500;
 $bold: 700;
+
+.vue-devtools__panel[data-v-e9063f7b] {
+  display: none;
+}
 
 .section {
   position: relative;
@@ -46,7 +50,6 @@ $bold: 700;
 
   button {
     color: #fff;
-    font-weight: $medium;
   }
 
   input[type="text"] {
@@ -62,15 +65,19 @@ $bold: 700;
     }
   }
 
+  .mo-only {
+    display: none;
+  }
+
   .container {
-  position: relative;
-  width: 100%;
-  max-width: 1366px;
-  min-width: 768px;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: fv(40);
+    position: relative;
+    width: 100%;
+    max-width: 1366px;
+    min-width: 721px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: fv(40);
   }
 
   header {
@@ -80,6 +87,7 @@ $bold: 700;
     margin-top: fv(40);
     margin-left: fv(40);
   }
+
   .logo {
     width: fv(110);
   }
@@ -105,6 +113,7 @@ $bold: 700;
     gap: fv(12);
     font-size: fv(50);
     line-height: lh(70, 50);
+    text-align: left;
 
     > span {
       display: block;
@@ -120,6 +129,7 @@ $bold: 700;
 
   .rounded-btn {
     font-size: fv(40);
+    font-weight: $medium;
     border: fv(2) solid #fff;
     border-radius: fv(50);
     padding: fv(14) fv(32) fv(6);
@@ -129,15 +139,16 @@ $bold: 700;
   // S : page-1
   .obj {
     width: fv(120);
-    margin-top: fv(80);
+    margin-top: fv(70);
     animation: upDown 2s ease-in-out infinite;
   }
 
   .start-btn {
     position: relative;
-    margin-top: fv(90);
+    margin-top: fv(80);
     padding-right: fv(34);
     font-size: fv(50);
+    font-weight: $medium;
     // animation: blink 1.2s 0.6s infinite;
 
     &::after {
@@ -147,10 +158,7 @@ $bold: 700;
       right: 0;
       top: 50%;
       transform: translateY(-60%);
-      background: url(../images/arrow_ico.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
+      background: url(../images/arrow_ico.png) no-repeat center/cover;
       width: fv(20);
       height: fv(37);
     }
@@ -185,14 +193,14 @@ $bold: 700;
   // S : page-3/4
   .options {
     display: flex;
+    justify-content: center;
     gap: fv(48);
-
-    font-size: fv(40);
-    text-align: center;
-    
   }
   .option-btn {
-    width: fv(160); // 수정
+    font-size: fv(40);
+    font-weight: $light;
+    text-align: center;
+    width: fv(160);
   }
   // E : page-3/4
 
@@ -274,12 +282,16 @@ $bold: 700;
   }
 
   .img {
-    border-radius: fv(30);
+    border-radius: fv(22);
     height: fv(220); // 수정
     border: 1px solid #fff; // 수정
 
-    &-thumb {width: fv(440);}
-    &-code {width: fv(220);}
+    &-thumb {
+      width: fv(440);
+    }
+    &-code {
+      width: fv(220);
+    }
   }
 
   .desc {
@@ -292,6 +304,11 @@ $bold: 700;
     margin-top: fv(50);
   }
   // E : page-6
+
+  @media screen and (max-width: 720px) {
+    @import '../scss/mobile';
+  }
+
 }
 
 @keyframes upDown {

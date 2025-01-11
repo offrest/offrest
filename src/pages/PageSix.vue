@@ -109,8 +109,9 @@ const result = resultsMap[firstOption]?.[secondOption];
 
       <div class="content content--pt">
         <div v-if="result">
-          <p class="title">
-            <span class="user-name">{{ userName }}</span>님을 위해 추천드립니다.
+          <p class="title title--mo">
+            <span class="user-name">{{ userName }}</span> 님을 <br class="mo-only"/>
+            위해 추천드립니다.
           </p>
 
           <!--
