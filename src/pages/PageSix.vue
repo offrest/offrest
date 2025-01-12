@@ -12,88 +12,88 @@ const reset = () => {
 
 const resultsMap = {
   행복: {
-    행복1: {
+    '경쾌하고 밝은 팝': {
       name: '플리1',
       youtube: '/path/to/image.png',
       qrCode: '/path/to/qrcode1.png',
     },
-    행복2: {
+    '몽환적이고 편안한 어쿠스틱': {
       name: '플리2',
       youtube: 'https://youtu.be/zsCWcd9OSIM?si=9uE_W5fNXEkUEfqI',
       qrCode: '/path/to/qrcode2.png',
     },
-    행복3: {
+    '신나는 힙합': {
       name: '플리3',
       youtube: 'https://youtu.be/PMWItLXM3sU?si=fp5w30_H6qeSo1Ht',
       qrCode: '/path/to/qrcode3.png',
     },
-    행복4: {
+    '따뜻하고 감성적인 R&B': {
       name: '플리4',
       youtube: 'https://youtu.be/x_rXYMvO6iA?si=fpAHGeTKG56jhXE6',
       qrCode: '/path/to/qrcode4.png',
     },
   },
   슬픔: {
-    슬픔1: {
+    '잔잔한 발라드': {
       name: '플리5',
       youtube: 'https://youtu.be/PpsW1rWlq2Y?si=YJZD-qEDmh7KheBA',
       qrCode: '/path/to/qrcode5.png',
     },
-    슬픔2: {
+    '피아노 중심의 감성적인 곡': {
       name: '플리6',
       youtube: 'https://youtube.com/example6',
       qrCode: '/path/to/qrcode6.png',
     },
-    슬픔3: {
+    '어두운 분위기의 알앤비 소울': {
       name: '플리7',
       youtube: 'https://youtube.com/example7',
       qrCode: '/path/to/qrcode7.png',
     },
-    슬픔4: {
+    '슬픈 어쿠스틱,인디 음악': {
       name: '플리8',
       youtube: 'https://youtube.com/example8',
       qrCode: '/path/to/qrcode8.png',
     },
   },
   평온: {
-    평온1: {
+    '잔잔한 클래식음악': {
       name: '플리9',
       youtube: 'https://youtube.com/example9',
       qrCode: '/path/to/qrcode9.png',
     },
-    평온2: {
+    '따뜻하고 부드러운 재즈': {
       name: '플리10',
       youtube: 'https://youtube.com/example10',
       qrCode: '/path/to/qrcode10.png',
     },
-    평온3: {
+    '편안한 어쿠스틱 팝': {
       name: '플리11',
       youtube: 'https://youtube.com/example11',
       qrCode: '/path/to/qrcode11.png',
     },
-    평온4: {
+    '명상적인 앰비언트 음악': {
       name: '플리12',
       youtube: 'https://youtube.com/example12',
       qrCode: '/path/to/qrcode12.png',
     },
   },
   불안: {
-    불안1: {
+    '차분한 일렉트로닉,앰비언트음악': {
       name: '플리13',
       youtube: 'https://youtube.com/example13',
       qrCode: '/path/to/qrcode13.png',
     },
-    불안2: {
+    '명상적인 인스트루 멘탈': {
       name: '플리14',
       youtube: 'https://youtube.com/example14',
       qrCode: '/path/to/qrcode14.png',
     },
-    불안3: {
+    '성적인 록/인디 음악': {
       name: '플리15',
       youtube: 'https://youtube.com/example15',
       qrCode: '/path/to/qrcode15.png',
     },
-    불안4: {
+    '편안한 어쿠스틱 팝': {
       name: '플리16',
       youtube: 'https://youtube.com/example16',
       qrCode: '/path/to/qrcode16.png',

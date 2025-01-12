@@ -8,7 +8,6 @@ const selectedOption = ref(null);
 // 선택지를 고칠때는 나중에 여기만 고치면 됨
 const options = ['행복', '슬픔', '평온', '불안'];
 
-// 선택한 옵션을 로컬스토리지에 저장하는 함수
 const selectOption = (option) => {
   selectedOption.value = option;
   localStorage.setItem('firstOption', selectedOption.value);

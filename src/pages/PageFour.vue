@@ -3,17 +3,16 @@ import { ref } from 'vue';
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-
 const firstOption = localStorage.getItem('firstOption');
 const selectedOption = ref(null);
 
 const optionData = {
   행복: {
-    question: '행복한 감정을 느끼고 계시다면 어떤 노래로 휴식하고 싶으신가요? ',
+    question: '행복한 감정을 느끼고 계시다면 어떤 노래로 휴식하고 싶으신가요?',
     options: ['경쾌하고 밝은 팝', '몽환적이고 편안한 어쿠스틱', '신나는 힙합', '따뜻하고 감성적인 R&B'],
   },
   슬픔: {
-    question: '슬픈 감정을 느끼고 계시다면 어떤 노래로 휴식하고 싶으신가요? ',
+    question: '슬픈 감정을 느끼고 계시다면 어떤 노래로 휴식하고 싶으신가요?',
     options: ['잔잔한 발라드', '피아노 중심의 감성적인 곡', '어두운 분위기의 알앤비 소울', '슬픈 어쿠스틱,인디 음악'],
   },
   평온: {
