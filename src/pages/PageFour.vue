@@ -9,20 +9,20 @@ const selectedOption = ref(null);
 
 const optionData = {
   행복: {
-    question: '행복 선택한 사람의 질문',
-    options: ['행복1', '행복2', '행복3', '행복4'],
+    question: '행복한 감정을 느끼고 계시다면 어떤 노래로 휴식하고 싶으신가요? ',
+    options: ['경쾌하고 밝은 팝', '몽환적이고 편안한 어쿠스틱', '신나는 힙합', '따뜻하고 감성적인 R&B'],
   },
   슬픔: {
-    question: '슬픔 선택한 사람의 질문',
-    options: ['슬픔1', '슬픔2', '슬픔3', '슬픔4'],
+    question: '슬픈 감정을 느끼고 계시다면 어떤 노래로 휴식하고 싶으신가요? ',
+    options: ['잔잔한 발라드', '피아노 중심의 감성적인 곡', '어두운 분위기의 알앤비 소울', '슬픈 어쿠스틱,인디 음악'],
   },
   평온: {
-    question: '평온 선택한 사람의 질문',
-    options: ['평온1', '평온2', '평온3', '평온4'],
+    question: '평온한 감정을 느끼고 계시다면 어떤 노래로 휴식하고 싶으신가요?',
+    options: ['잔잔한 클래식음악', '따뜻하고 부드러운 재즈', '편안한 어쿠스틱 팝', '명상적인 앰비언트 음악'],
   },
   불안: {
-    question: '불안 선택한 사람의 질문',
-    options: ['불안1', '불안2', '불안3', '불안4'],
+    question: '불안한 감정을 느끼고 계시다면 어떤 노래로 휴식하고 싶으신가요?',
+    options: ['차분한 일렉트로닉,앰비언트음악 ', '명상적인 인스트루 멘탈', '성적인 록/인디 음악', '편안한 어쿠스틱 팝'],
   },
 };
 
@@ -32,7 +32,7 @@ const options = optionData[firstOption]?.options || [];
 const selectOption = (option) => {
   selectedOption.value = option;
   localStorage.setItem('secondOption', selectedOption.value);
-  router.push("/page-6");
+  router.push("/page-5");
 };
 </script>
 

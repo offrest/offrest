@@ -1,5 +1,13 @@
 <script setup>
+import { onMounted } from 'vue';
+import { useRouter } from "vue-router";
 
+const router = useRouter();
+onMounted(() => {
+  setTimeout(() => {
+    router.push("/page-6");
+  }, 2000); // 2000ms = 2초
+});
 </script>
 
 <template>
