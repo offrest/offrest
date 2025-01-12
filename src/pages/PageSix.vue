@@ -1,5 +1,6 @@
 <script setup>
-import qrCodeImage from '@/assets/images/thumnail1.jpg'
+import youtube from '@/assets/images/thumnail1.jpg'
+import qrCode from '@/assets/images/qrCode1.jpg'
 
 import { useRouter } from "vue-router";
 
@@ -14,90 +15,90 @@ const reset = () => {
 
 const resultsMap = {
   행복: {
-    '경쾌하고 밝은 팝': {
+    '경쾌하고\n 밝은 팝': {
       name: '플리1',
-      youtube: qrCodeImage,
-      qrCode: '/path/to/qrcode1.png',
+      youtube: youtube,
+      qrCode: qrCode,
     },
-    '몽환적이고 편안한 어쿠스틱': {
+    '몽환적이고\n 편안한\n 어쿠스틱': {
       name: '플리2',
-      youtube: qrCodeImage,
-      qrCode: '/path/to/qrcode2.png',
+      youtube: youtube,
+      qrCode: qrCode,
     },
-    '신나는 힙합': {
+    '신나는\n 힙합': {
       name: '플리3',
-      youtube: qrCodeImage,
-      qrCode: '/path/to/qrcode3.png',
+      youtube: youtube,
+      qrCode: qrCode,
     },
-    '따뜻하고 감성적인 R&B': {
+    '따뜻하고\n 감성적인\n R&B': {
       name: '플리4',
-      youtube: qrCodeImage,
-      qrCode: '/path/to/qrcode4.png',
+      youtube: youtube,
+      qrCode: qrCode,
     },
   },
   슬픔: {
-    '잔잔한 발라드': {
+    '잔잔한\n 발라드': {
       name: '플리5',
-      youtube: qrCodeImage,
+      youtube: youtube,
       qrCode: '/path/to/qrcode5.png',
     },
-    '피아노 중심의 감성적인 곡': {
+    '피아노 중심의\n 감성적인 곡': {
       name: '플리6',
-      youtube: qrCodeImage,
+      youtube: youtube,
       qrCode: '/path/to/qrcode6.png',
     },
-    '어두운 분위기의 알앤비 소울': {
+    '어두운\n 분위기의\n 알앤비 소울': {
       name: '플리7',
-      youtube: qrCodeImage,
+      youtube: youtube,
       qrCode: '/path/to/qrcode7.png',
     },
-    '슬픈 어쿠스틱,인디 음악': {
+    '슬픈 어쿠스틱,\n인디 음악': {
       name: '플리8',
-      youtube: qrCodeImage,
+      youtube: youtube,
       qrCode: '/path/to/qrcode8.png',
     },
   },
   평온: {
-    '잔잔한 클래식음악': {
+    '잔잔한\n 클래식음악': {
       name: '플리9',
-      youtube: qrCodeImage,
+      youtube: youtube,
       qrCode: '/path/to/qrcode9.png',
     },
-    '따뜻하고 부드러운 재즈': {
+    '따뜻하고\n 부드러운 재즈': {
       name: '플리10',
-      youtube: qrCodeImage,
+      youtube: youtube,
       qrCode: '/path/to/qrcode10.png',
     },
-    '편안한 어쿠스틱 팝': {
+    '편안한\n 어쿠스틱 팝': {
       name: '플리11',
-      youtube: qrCodeImage,
+      youtube: youtube,
       qrCode: '/path/to/qrcode11.png',
     },
-    '명상적인 앰비언트 음악': {
+    '명상적인\n 앰비언트 음악': {
       name: '플리12',
-      youtube: qrCodeImage,
+      youtube: youtube,
       qrCode: '/path/to/qrcode12.png',
     },
   },
   불안: {
-    '차분한 일렉트로닉,앰비언트음악': {
+    '차분한\n 일렉트로닉,\n앰비언트음악 ': {
       name: '플리13',
-      youtube: qrCodeImage,
+      youtube: youtube,
       qrCode: '/path/to/qrcode13.png',
     },
-    '명상적인 인스트루 멘탈': {
+    '명상적인\n 인스트루 멘탈': {
       name: '플리14',
-      youtube: qrCodeImage,
+      youtube: youtube,
       qrCode: '/path/to/qrcode14.png',
     },
-    '성적인 록/인디 음악': {
+    '성적인 록/\n인디 음악': {
       name: '플리15',
-      youtube: qrCodeImage,
+      youtube: youtube,
       qrCode: '/path/to/qrcode15.png',
     },
-    '편안한 어쿠스틱 팝': {
+    '편안한\n 어쿠스틱 팝': {
       name: '플리16',
-      youtube: qrCodeImage,
+      youtube: youtube,
       qrCode: '/path/to/qrcode16.png',
     },
   },
