@@ -64,7 +64,7 @@ onMounted(() => {
               :class="['option-btn', { active: selectedOption === option }]"
               @click="selectOption(option)"
             >
-              {{ option }}&nbsp;&nbsp;
+              {{ option }}
             </button>
           </div>
 

@@ -1,5 +1,5 @@
 <script setup>
-import qrCodeImage from '@/assets/images/logo.png'
+import qrCodeImage from '@/assets/images/thumnail1.jpg'
 
 import { useRouter } from "vue-router";
 
@@ -9,7 +9,7 @@ const firstOption = localStorage.getItem('firstOption');
 const secondOption = localStorage.getItem('secondOption');
 
 const reset = () => {
-  router.push("/page-1");
+  router.push("/");
 };
 
 const resultsMap = {
@@ -140,7 +140,7 @@ const result = resultsMap[firstOption]?.[secondOption];
 
         <button
           type="button"
-          class="reset-btn rounded-btn start-btn"
+          class="reset-btn rounded-btn"
           @click="reset">처음으로
         </button>
 
