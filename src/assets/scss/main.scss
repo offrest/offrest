@@ -37,6 +37,7 @@ $bold: 700;
   letter-spacing: 0;
   font-weight: $light;
   color: #fff;
+  white-space: pre-line;
 
   // S : common
   img {
@@ -109,11 +110,12 @@ $bold: 700;
 
   .title {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: fv(12);
+    align-items: center;
     font-size: fv(50);
     line-height: lh(70, 50);
-    text-align: left;
+    text-align: center;
 
     > span {
       display: block;
@@ -124,7 +126,7 @@ $bold: 700;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: fv(80);
+    margin-top: fv(60);
   }
 
   .rounded-btn {
@@ -192,15 +194,20 @@ $bold: 700;
 
   // S : page-3/4
   .options {
-    display: flex;
-    justify-content: center;
-    gap: fv(48);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(fv(200), 1fr));
+    gap: fv(26);
   }
   .option-btn {
-    font-size: fv(40);
+    place-items: center;
+    aspect-ratio: 1 / 0.7;
+    padding: fv(20) fv(10) fv(10);
+    border: fv(1) solid #fff;
+    border-radius: fv(20);
+
+    font-size: fv(36);
+    line-height: lh(44, 36);
     font-weight: $light;
-    text-align: center;
-    width: fv(160);
   }
   // E : page-3/4
 

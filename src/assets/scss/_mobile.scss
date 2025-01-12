@@ -63,29 +63,27 @@
 }
 
 .submit-btn {
-  margin-top: fv(140);
+  margin-top: fv(100);
 }
 // E : page-2
 
 // S : page-3/4
 .options {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: fv(48);
-}
-.option-btn {
-  font-size: fv(36);
-  width: fv(160);
+  grid-template-columns: repeat(2, minmax(fv(190), 1fr));
+  gap: fv(30);
 }
 // E : page-3/4
 
 // S : page-6
-.title--mo {
-  display: block;
-  text-align: center;
+.title {
+  white-space: pre;
 
-  > span {
-    display: inline-block;
+  &--mo {
+    display: block;
+    text-align: center;
+    > span {
+      display: inline-block;
+    }
   }
 }
 
