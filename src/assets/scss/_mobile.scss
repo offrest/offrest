@@ -1,0 +1,116 @@
+.mo-only {
+  display: block;
+}
+
+.container {
+  max-width: 768px;
+  min-width: 100%;
+  padding: fv(30);
+}
+
+  header {
+    margin-top: fv(30);
+    margin-left: fv(30);
+  }
+
+.logo {
+  width: fv(100);
+}
+
+.content {
+  padding: 0;
+
+  &--pt {
+    padding-top: 0;
+  }
+}
+
+.title {
+  gap: fv(10);
+  font-size: fv(40);
+  line-height: lh(56, 40);
+}
+
+.detail {
+  margin-top: fv(50);
+}
+// E : common
+
+// S : page-1
+.start-btn {
+  padding-right: fv(28);
+  font-size: fv(44);
+
+  &::after {
+    width: fv(15);
+    height: fv(32);
+  }
+}
+// E : page-1
+
+// S : page-2
+.input-box {
+  > input {
+    width: fv(472);
+    padding: fv(4);
+    
+    font-size: fv(38);
+  }
+}
+
+.info {
+  font-size: fv(26);
+}
+
+.submit-btn {
+  margin-top: fv(100);
+}
+// E : page-2
+
+// S : page-3/4
+.options {
+  grid-template-columns: repeat(2, minmax(fv(190), 1fr));
+  gap: fv(30);
+}
+// E : page-3/4
+
+// S : page-6
+.title {
+  white-space: pre;
+
+  &--mo {
+    display: block;
+    text-align: center;
+    > span {
+      display: inline-block;
+    }
+  }
+}
+
+.img-box {
+  flex-wrap: wrap;
+  gap: fv(20);
+  margin-top: fv(20);
+}
+
+.img {
+  height: fv(200); // 수정
+
+  &-thumb {
+    width: fv(340);
+  }
+  &-code {
+    width: fv(200);
+  }
+}
+
+.desc {
+  margin-top: fv(30);
+  font-size: fv(34);
+  line-height: lh(50, 34);
+}
+
+.reset-btn {
+  margin-top: fv(100);
+}
+// E : page-6
