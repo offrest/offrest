@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -21,18 +21,23 @@ const optionData = {
   },
   불안: {
     question: '불안한 감정을 느끼고 계시다면 어떤 노래로 휴식하고 싶으신가요?',
-    options: ['차분한 일렉트로닉,앰비언트음악 ', '명상적인 인스트루 멘탈', '성적인 록/인디 음악', '편안한 어쿠스틱 팝'],
+    options: ['차분한 일렉트로닉,앰비언트음악', '명상적인 인스트루 멘탈', '성적인 록/인디 음악', '편안한 어쿠스틱 팝'],
   },
 };
 
-const text = ref(optionData[firstOption]?.question || '질문 없음');
-const options = optionData[firstOption]?.options || [];
+const text = ref(optionData[firstOption]?.question);
+const options = optionData[firstOption]?.options;
 
 const selectOption = (option) => {
   selectedOption.value = option;
   localStorage.setItem('secondOption', selectedOption.value);
   router.push("/page-5");
 };
+
+onMounted(() => {
+  localStorage.removeItem('secondOption');
+  selectedOption.value = null;
+});
 </script>
 
 <template>
