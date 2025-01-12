@@ -1,4 +1,7 @@
 <script setup>
+import youtube from '@/assets/images/thumnail1.jpg'
+import qrCode from '@/assets/images/qrCode1.jpg'
+
 import { useRouter } from "vue-router";
 
 const router = useRouter();
@@ -7,95 +10,95 @@ const firstOption = localStorage.getItem('firstOption');
 const secondOption = localStorage.getItem('secondOption');
 
 const reset = () => {
-  router.push("/page-1");
+  router.push("/");
 };
 
 const resultsMap = {
   행복: {
-    행복1: {
+    '경쾌하고\n 밝은 팝': {
       name: '플리1',
-      youtube: '/path/to/image.png',
-      qrCode: '/path/to/qrcode1.png',
+      youtube: youtube,
+      qrCode: qrCode,
     },
-    행복2: {
+    '몽환적이고\n 편안한\n 어쿠스틱': {
       name: '플리2',
-      youtube: 'https://youtu.be/zsCWcd9OSIM?si=9uE_W5fNXEkUEfqI',
-      qrCode: '/path/to/qrcode2.png',
+      youtube: youtube,
+      qrCode: qrCode,
     },
-    행복3: {
+    '신나는\n 힙합': {
       name: '플리3',
-      youtube: 'https://youtu.be/PMWItLXM3sU?si=fp5w30_H6qeSo1Ht',
-      qrCode: '/path/to/qrcode3.png',
+      youtube: youtube,
+      qrCode: qrCode,
     },
-    행복4: {
+    '따뜻하고\n 감성적인\n R&B': {
       name: '플리4',
-      youtube: 'https://youtu.be/x_rXYMvO6iA?si=fpAHGeTKG56jhXE6',
-      qrCode: '/path/to/qrcode4.png',
+      youtube: youtube,
+      qrCode: qrCode,
     },
   },
   슬픔: {
-    슬픔1: {
+    '잔잔한\n 발라드': {
       name: '플리5',
-      youtube: 'https://youtu.be/PpsW1rWlq2Y?si=YJZD-qEDmh7KheBA',
+      youtube: youtube,
       qrCode: '/path/to/qrcode5.png',
     },
-    슬픔2: {
+    '피아노 중심의\n 감성적인 곡': {
       name: '플리6',
-      youtube: 'https://youtube.com/example6',
+      youtube: youtube,
       qrCode: '/path/to/qrcode6.png',
     },
-    슬픔3: {
+    '어두운\n 분위기의\n 알앤비 소울': {
       name: '플리7',
-      youtube: 'https://youtube.com/example7',
+      youtube: youtube,
       qrCode: '/path/to/qrcode7.png',
     },
-    슬픔4: {
+    '슬픈 어쿠스틱,\n인디 음악': {
       name: '플리8',
-      youtube: 'https://youtube.com/example8',
+      youtube: youtube,
       qrCode: '/path/to/qrcode8.png',
     },
   },
   평온: {
-    평온1: {
+    '잔잔한\n 클래식음악': {
       name: '플리9',
-      youtube: 'https://youtube.com/example9',
+      youtube: youtube,
       qrCode: '/path/to/qrcode9.png',
     },
-    평온2: {
+    '따뜻하고\n 부드러운 재즈': {
       name: '플리10',
-      youtube: 'https://youtube.com/example10',
+      youtube: youtube,
       qrCode: '/path/to/qrcode10.png',
     },
-    평온3: {
+    '편안한\n 어쿠스틱 팝': {
       name: '플리11',
-      youtube: 'https://youtube.com/example11',
+      youtube: youtube,
       qrCode: '/path/to/qrcode11.png',
     },
-    평온4: {
+    '명상적인\n 앰비언트 음악': {
       name: '플리12',
-      youtube: 'https://youtube.com/example12',
+      youtube: youtube,
       qrCode: '/path/to/qrcode12.png',
     },
   },
   불안: {
-    불안1: {
+    '차분한\n 일렉트로닉,\n앰비언트음악 ': {
       name: '플리13',
-      youtube: 'https://youtube.com/example13',
+      youtube: youtube,
       qrCode: '/path/to/qrcode13.png',
     },
-    불안2: {
+    '명상적인\n 인스트루 멘탈': {
       name: '플리14',
-      youtube: 'https://youtube.com/example14',
+      youtube: youtube,
       qrCode: '/path/to/qrcode14.png',
     },
-    불안3: {
+    '성적인 록/\n인디 음악': {
       name: '플리15',
-      youtube: 'https://youtube.com/example15',
+      youtube: youtube,
       qrCode: '/path/to/qrcode15.png',
     },
-    불안4: {
+    '편안한\n 어쿠스틱 팝': {
       name: '플리16',
-      youtube: 'https://youtube.com/example16',
+      youtube: youtube,
       qrCode: '/path/to/qrcode16.png',
     },
   },
@@ -123,7 +126,7 @@ const result = resultsMap[firstOption]?.[secondOption];
           <div class="img-box">
             <!-- 유튜브 영상 iframe 삽입 -->
             <div class="img img-thumb">
-              <img :src="result.qrCode" alt="썸네일" />
+              <img :src="result.youtube" alt="썸네일" />
             </div>
 
             <!-- QR 코드 삽입 -->
@@ -134,11 +137,11 @@ const result = resultsMap[firstOption]?.[secondOption];
         </div>
         <p v-else>결과 없음</p>
 
-        <p class="desc">이 음악이 위로가 되었으면 좋겠습니다.</p>
+        <p class="desc">이 음악이 휴식이 되었으면 좋겠습니다.</p>
 
         <button
           type="button"
-          class="reset-btn rounded-btn start-btn"
+          class="reset-btn rounded-btn"
           @click="reset">처음으로
         </button>
 

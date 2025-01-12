@@ -1,9 +1,8 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-
 const firstOption = localStorage.getItem('firstOption');
 const selectedOption = ref(null);
 
@@ -26,14 +25,19 @@ const optionData = {
   },
 };
 
-const text = ref(optionData[firstOption]?.question || '질문 없음');
-const options = optionData[firstOption]?.options || [];
+const text = ref(optionData[firstOption]?.question);
+const options = optionData[firstOption]?.options;
 
 const selectOption = (option) => {
   selectedOption.value = option;
   localStorage.setItem('secondOption', selectedOption.value);
   router.push("/page-5");
 };
+
+onMounted(() => {
+  localStorage.removeItem('secondOption');
+  selectedOption.value = null;
+});
 </script>
 
 <template>
