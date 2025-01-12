@@ -1,8 +1,14 @@
 <script setup>
+import { useRouter } from "vue-router";
 
+const router = useRouter();
 const userName = localStorage.getItem('userName');
 const firstOption = localStorage.getItem('firstOption');
 const secondOption = localStorage.getItem('secondOption');
+
+const reset = () => {
+  router.push("/page-1");
+};
 
 const resultsMap = {
   행복: {
@@ -114,12 +120,6 @@ const result = resultsMap[firstOption]?.[secondOption];
             위해 추천드립니다.
           </p>
 
-          <!--
-          <p>{{ firstOption }}과</p>
-          <p>{{ secondOption }}을 택하셨습니다.</p>
-          <p>선택한 플리: {{ result.name }}</p>
-          -->
-
           <div class="img-box">
             <!-- 유튜브 영상 iframe 삽입 -->
             <div class="img img-thumb">
@@ -138,9 +138,10 @@ const result = resultsMap[firstOption]?.[secondOption];
 
         <button
           type="button"
-          class="reset-btn rounded-btn"
+          class="reset-btn rounded-btn start-btn"
           @click="reset">처음으로
         </button>
+
       </div>
     </div>
   </section>
