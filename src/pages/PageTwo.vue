@@ -40,7 +40,7 @@ const saveName = () => {
               placeholder="10자 이내로 입력해 주세요."
             />
           </div>
-          <!-- <span class="info">※ 필수로 기재해 주셔야 합니다.</span> -->
+          <span class="info">※ 필수로 기재해 주셔야 합니다.</span>
 
           <button
             type="submit"
