@@ -3,7 +3,8 @@
 }
 
 .container {
-  max-width: 768px;
+  width: 100%;
+  max-width: 720px;
   min-width: 100%;
   padding: fv(30);
 }
@@ -52,7 +53,7 @@
 .input-box {
   > input {
     width: fv(472);
-    padding: fv(4);
+    padding: fv(10);
     
     font-size: fv(38);
   }
@@ -69,35 +70,32 @@
 
 // S : page-3/4
 .options {
-  grid-template-columns: repeat(2, minmax(fv(190), 1fr));
+  display: grid;
+  grid-template-columns: repeat(2 ,1fr);
   gap: fv(30);
+}
+
+.option-btn {
+  width: fv(230);
+  height: fv(180);
 }
 // E : page-3/4
 
 // S : page-6
 .title {
   white-space: pre;
-
-  &--mo {
-    display: block;
-    text-align: center;
-    > span {
-      display: inline-block;
-    }
-  }
 }
 
 .img-box {
   flex-wrap: wrap;
-  gap: fv(20);
+  gap: fv(30);
   margin-top: fv(20);
 }
 
 .img {
-  height: fv(200); // 수정
-
   &-thumb {
-    width: fv(340);
+    width: fv(360);
+    height: fv(200);
   }
   &-code {
     width: fv(200);

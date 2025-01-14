@@ -90,7 +90,7 @@ const resultsMap = {
       youtube: 'https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf',
       qrCode: '/path/to/qrcode14.png',
     },
-    '성적인 록/\n인디 음악': {
+    '감성적인 록\n/인디 음악': {
       name: '플리15',
       youtube: 'https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf',
       qrCode: '/path/to/qrcode15.png',
@@ -109,7 +109,7 @@ const getEmbedUrl = (url) => {
         const videoId = url.split('/').pop().split('?')[0];
         return `https://www.youtube.com/embed/${videoId}`;
       }
-      return null; 
+      return null;
     };
 </script>
 
@@ -124,21 +124,23 @@ const getEmbedUrl = (url) => {
 
       <div class="content content--pt">
         <div v-if="result">
-          <p class="title title--mo">
-            <span class="user-name">{{ userName }}</span> 님을 <br class="mo-only"/>
-            위해 추천드립니다.
+          <p class="title title--row">
+            <span class="user-name">{{ userName }}</span><br class="mo-only"/>
+            님을 위해 추천드립니다.
           </p>
 
           <div class="img-box">
-            
+
             <!-- 유튜브 영상 iframe 삽입 -->
-            <iframe
-              :src="getEmbedUrl(result.youtube)"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              title="YouTube video"
-            ></iframe>
+            <div class="img img-thumb">
+              <iframe
+                :src="getEmbedUrl(result.youtube)"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                title="YouTube video"
+              ></iframe>
+            </div>
 
             <!-- QR 코드 삽입 -->
             <div class="img img-code">
