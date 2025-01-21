@@ -45,6 +45,12 @@ $bold: 700;
     width: 100%;
   }
 
+  iframe,
+  video {
+    width: 100%;
+    height: 100%;
+  }
+
   span {
     display: inline-block;
   }
@@ -59,6 +65,7 @@ $bold: 700;
     padding: 0;
     margin: 0;
     background-color: transparent;
+    caret-color: #888;
 
     &:invalid {
       border: none;
@@ -117,8 +124,13 @@ $bold: 700;
     line-height: lh(70, 50);
     text-align: center;
 
-    > span {
+    &--row {
       display: block;
+      text-align: center;
+    }
+
+    > span {
+      display: inline-block;
     }
   }
 
@@ -184,7 +196,7 @@ $bold: 700;
   .info {
     margin-top: fv(24);
     font-size: fv(24);
-    color: #FF2F2F;
+    color: #2eae16;
   }
 
   .submit-btn {
@@ -194,14 +206,16 @@ $bold: 700;
 
   // S : page-3/4
   .options {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(fv(200), 1fr));
+    display: flex;
+    justify-content: center;
     gap: fv(26);
   }
+  
   .option-btn {
-    place-items: center;
-    aspect-ratio: 1 / 0.7;
-    padding: fv(20) fv(10) fv(10);
+    width: fv(230);
+    height: fv(180);
+
+    padding-top: fv(10);
     border: fv(1) solid #fff;
     border-radius: fv(20);
 
@@ -232,22 +246,22 @@ $bold: 700;
     height: fv(84);
     border-radius: fv(5);
     background: #ffffff;
-    transition: height 0.6s;
-    animation: soundWave 0ms -600ms linear infinite alternate;
+    transition: height 0.5s;
+    animation: soundWave 0ms -500ms linear infinite alternate;
   }
 
-  .bar:nth-child(1)  { animation-name: soundWave4; animation-duration: 674ms; }
-  .bar:nth-child(2)  { animation-name: soundWave2; animation-duration: 633ms; }
-  .bar:nth-child(3)  { animation-name: soundWave5; animation-duration: 607ms; }
-  .bar:nth-child(4)  { animation-name: soundWave1; animation-duration: 658ms; }
-  .bar:nth-child(5)  { animation-name: soundWave3; animation-duration: 600ms; }
-  .bar:nth-child(6)  { animation-name: soundWave5; animation-duration: 627ms; }
-  .bar:nth-child(7)  { animation-name: soundWave2; animation-duration: 641ms; }
-  .bar:nth-child(8)  { animation-name: soundWave4; animation-duration: 619ms; }
-  .bar:nth-child(9)  { animation-name: soundWave1; animation-duration: 687ms; }
-  .bar:nth-child(10) { animation-name: soundWave3; animation-duration: 642ms; }
-  .bar:nth-child(11) { animation-name: soundWave5; animation-duration: 600ms; }
-  .bar:nth-child(12) { animation-name: soundWave2; animation-duration: 668ms; }
+  .bar:nth-child(1)  { animation-name: soundWave4; animation-duration: 574ms; }
+  .bar:nth-child(2)  { animation-name: soundWave2; animation-duration: 533ms; }
+  .bar:nth-child(3)  { animation-name: soundWave5; animation-duration: 507ms; }
+  .bar:nth-child(4)  { animation-name: soundWave1; animation-duration: 558ms; }
+  .bar:nth-child(5)  { animation-name: soundWave3; animation-duration: 500ms; }
+  .bar:nth-child(6)  { animation-name: soundWave5; animation-duration: 527ms; }
+  .bar:nth-child(7)  { animation-name: soundWave2; animation-duration: 541ms; }
+  .bar:nth-child(8)  { animation-name: soundWave4; animation-duration: 519ms; }
+  .bar:nth-child(9)  { animation-name: soundWave1; animation-duration: 587ms; }
+  .bar:nth-child(10) { animation-name: soundWave3; animation-duration: 542ms; }
+  .bar:nth-child(11) { animation-name: soundWave5; animation-duration: 500ms; }
+  .bar:nth-child(12) { animation-name: soundWave2; animation-duration: 568ms; }
 
   @keyframes soundWave1 {
     0% { opacity: .35; height: fv(24); }
@@ -284,20 +298,20 @@ $bold: 700;
   .img-box {
     display: flex;
     justify-content: center;
-    gap: fv(30);
+    align-items: center;
+    gap: fv(34);
     margin-top: fv(30);
   }
 
   .img {
-    border-radius: fv(22);
-    height: fv(220); // 수정
-    border: 1px solid #fff; // 수정
+    border: 1px solid #fff;
 
     &-thumb {
-      width: fv(440);
+      width: fv(420);
+      height: fv(230);
     }
     &-code {
-      width: fv(220);
+      width: fv(230);
     }
   }
 
