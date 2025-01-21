@@ -5,7 +5,8 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 onMounted(() => {
   setTimeout(() => {
-    router.push("/page-5");
+    console.log("Redirecting...");
+    router.push('/page-5');
   }, 2000); // 2000ms = 2초
 });
 </script>

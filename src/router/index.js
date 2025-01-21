@@ -3,7 +3,7 @@ import PageOne from '@/pages/PageOne.vue'
 import PageTwo from '@/pages/PageTwo.vue'
 import PageThree from '@/pages/PageThree.vue'
 import PageFour from '@/pages/PageFour.vue'
-import PageFive from '@/pages/PageFour.vue'
+import PageFive from '@/pages/PageFive.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),

@@ -6,9 +6,10 @@ import questionData from '@/data/questions.json';
 const route = useRoute(); 
 const router = useRouter(); 
 
-const selectedOption = ref(null);
+//const selectedOption = ref(null);
 const questions = ref(questionData);
 const currentQuestion = ref({});
+const selectedAnswers = ref([]);
 
 const updateQuestion = () => {
   const id = parseInt(route.params.id, 10); 
@@ -20,8 +21,23 @@ const updateQuestion = () => {
 watch(() => route.params.id, updateQuestion, { immediate: true });
 
 const selectOption = (option) => {
-  selectedOption.value = option;
-  const nextId = parseInt(route.params.id, 10) + 1;
+  const id = parseInt(route.params.id, 10);
+
+  const question = questions.value.find(q => q.id === id);
+
+  // 선택한 옵션이 A인지 B인지 확인
+  const selectedKey = question.A === option ? 'A' : 'B';
+
+  // 해당 질문 ID에 A 또는 B 저장
+  selectedAnswers.value[id - 1] = selectedKey;
+
+  // LocalStorage에 저장
+  localStorage.setItem('answers', JSON.stringify(selectedAnswers.value));
+  // // 선택한 답안을 저장
+  // selectedAnswers.value[id - 1] = option;
+  // localStorage.setItem('answers', JSON.stringify(selectedAnswers.value));
+
+  const nextId = id + 1;
   if (questions.value.some(q => q.id === nextId)) {
     router.push(`/page-3/${nextId}`);
   } else {
