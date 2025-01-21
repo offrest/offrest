@@ -12,7 +12,7 @@ const saveName = () => {
     return;
   }
   localStorage.setItem('userName', textInput.value);
-  router.push("/page-3");
+  router.push("/page-3/1");
 };
 </script>
 

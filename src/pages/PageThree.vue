@@ -1,30 +1,33 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useRouter } from "vue-router";
+import { ref, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router'; 
 import questionData from '@/data/questions.json';
 
-const router = useRouter();
-const selectedOption = ref(null);
+const route = useRoute(); 
+const router = useRouter(); 
 
+const selectedOption = ref(null);
 const questions = ref(questionData);
-const currentQuestion = ref(questions.value[0] || {});
+const currentQuestion = ref({});
+
+const updateQuestion = () => {
+  const id = parseInt(route.params.id, 10); 
+  const question = questions.value.find(q => q.id === id);
+  currentQuestion.value = question;
+};
+
+// URL 파라미터 변경을 감지
+watch(() => route.params.id, updateQuestion, { immediate: true });
 
 const selectOption = (option) => {
   selectedOption.value = option;
-  localStorage.setItem('selectedOption', selectedOption.value);
-  router.push("/page-4");
+  const nextId = parseInt(route.params.id, 10) + 1;
+  if (questions.value.some(q => q.id === nextId)) {
+    router.push(`/page-3/${nextId}`);
+  } else {
+    router.push('/page-4'); // 로딩페이지로 이동동
+  }
 };
-
-onMounted(async() => {
-  const response = await fetch('../data/questions.json');
-  const data = await response.json();
-  questions.value = data;
-
-  console.log(questions.value);
-  localStorage.removeItem('selectedOption');
-  selectedOption.value = null;
-  console.log(questionData);
-});
 </script>
 
 <template>
@@ -36,30 +39,27 @@ onMounted(async() => {
         </div>
       </header>
 
-      <div class="content">
+      <div class="content" v-if="currentQuestion.text">
         <p class="title">
-          <span>Q2.</span>
-          <span>{{ currentQuestion.value.text }}</span>
+          <span>Q{{ currentQuestion.id }}.</span>
+          <span>{{ currentQuestion.text }}</span>
         </p>
 
         <div class="detail">
           <!-- 선택지 리스트 -->
           <div class="options">
             <button
-              v-for="(option, index) in [currentQuestion.value.A, currentQuestion.value.B]"
+              v-for="(option, index) in [currentQuestion.A, currentQuestion.B]"
               :key="index"
-              :class="['option-btn', { active: selectedOption === option }]"
+              :class="['option-btn']"
               @click="selectOption(option)"
             >
               {{ option }}
             </button>
           </div>
-
-          <div class="selected-option" v-if="selectedOption">
-            <p>선택된 옵션: {{ selectedOption }}</p>
-          </div>
         </div>
       </div>
+      <div v-else>질문을 찾을 수 없습니다.</div>
     </div>
   </section>
 </template>
