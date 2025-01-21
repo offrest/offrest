@@ -1,17 +1,17 @@
 <script setup>
 import { ref, watch } from 'vue';
-import { useRoute, useRouter } from 'vue-router'; 
+import { useRoute, useRouter } from 'vue-router';
 import questionData from '@/data/questions.json';
 
-const route = useRoute(); 
-const router = useRouter(); 
+const route = useRoute();
+const router = useRouter();
 
 const questions = ref(questionData);
 const currentQuestion = ref({});
 const selectedAnswers = ref([]);
 
 const updateQuestion = () => {
-  const id = parseInt(route.params.id, 10); 
+  const id = parseInt(route.params.id, 10);
   const question = questions.value.find(q => q.id === id);
   currentQuestion.value = question;
 };

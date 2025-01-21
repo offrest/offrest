@@ -27,13 +27,9 @@
 }
 
 .title {
-  gap: fv(10);
-  font-size: fv(40);
-  line-height: lh(56, 40);
-}
-
-.detail {
-  margin-top: fv(50);
+  gap: fv(6);
+  font-size: fv(42);
+  line-height: lh(58, 42);
 }
 // E : common
 
@@ -62,30 +58,9 @@
 .info {
   font-size: fv(26);
 }
-
-.submit-btn {
-  margin-top: fv(100);
-}
 // E : page-2
 
-// S : page-3/4
-.options {
-  display: grid;
-  grid-template-columns: repeat(2 ,1fr);
-  gap: fv(30);
-}
-
-.option-btn {
-  width: fv(230);
-  height: fv(180);
-}
-// E : page-3/4
-
 // S : page-6
-.title {
-  white-space: pre;
-}
-
 .img-box {
   flex-wrap: wrap;
   gap: fv(30);

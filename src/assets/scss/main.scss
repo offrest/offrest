@@ -107,7 +107,7 @@ $bold: 700;
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 0 fv(100);
+    padding: 0 fv(110);
     text-align: center;
 
     &--pt {
@@ -120,17 +120,13 @@ $bold: 700;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: fv(50);
-    line-height: lh(70, 50);
+    font-size: fv(48);
+    line-height: lh(68, 48);
     text-align: center;
 
-    &--row {
-      display: block;
-      text-align: center;
-    }
-
-    > span {
-      display: inline-block;
+    &-intro {
+      font-size: fv(50);
+      line-height: lh(70, 50);
     }
   }
 
@@ -138,7 +134,7 @@ $bold: 700;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: fv(60);
+    margin-top: fv(50);
   }
 
   .rounded-btn {
@@ -163,7 +159,6 @@ $bold: 700;
     padding-right: fv(34);
     font-size: fv(50);
     font-weight: $medium;
-    // animation: blink 1.2s 0.6s infinite;
 
     &::after {
       content: '';
@@ -207,20 +202,19 @@ $bold: 700;
   // S : page-3/4
   .options {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: fv(26);
+    padding: 0 fv(40);
   }
   
   .option-btn {
-    width: fv(230);
-    height: fv(180);
-
-    padding-top: fv(10);
+    padding: fv(32) fv(24) fv(24);
     border: fv(1) solid #fff;
-    border-radius: fv(20);
+    border-radius: fv(16);
 
     font-size: fv(36);
-    line-height: lh(44, 36);
+    line-height: lh(50, 36);
     font-weight: $light;
   }
   // E : page-3/4
@@ -317,8 +311,8 @@ $bold: 700;
 
   .desc {
     margin-top: fv(40);
-    font-size: fv(44);
-    line-height: lh(52, 44);
+    font-size: fv(46);
+    line-height: lh(54, 46);
   }
 
   .reset-btn {
@@ -329,7 +323,6 @@ $bold: 700;
   @media screen and (max-width: 720px) {
     @import '../scss/mobile';
   }
-
 }
 
 @keyframes upDown {
@@ -338,14 +331,5 @@ $bold: 700;
   }
   50% {
     transform: translateY(fv(10));
-  }
-}
-
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.3;
   }
 }
