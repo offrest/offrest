@@ -18,7 +18,6 @@
 }
 
 $bg-color: #000;
-$point-color: #2eae16;
 $light: 300;
 $medium: 500;
 $bold: 700;
@@ -190,7 +189,7 @@ $bold: 700;
   .info {
     margin-top: fv(24);
     font-size: fv(24);
-    color: $point-color;
+    color: #2eae16;
   }
 
   .submit-btn {
@@ -227,7 +226,7 @@ $bold: 700;
     left: 50%;
     transform: translateX(-50%);
     margin-top: fv(100);
-    width: 100%;
+    width: fv(400);
     height: fv(6);
   }
 
@@ -244,7 +243,7 @@ $bold: 700;
       left: 0;
       width: 0;
       height: 100%;
-      background-color: $point-color;
+      background-color: #fff;
       transition: 0.3s width;
     }
     
