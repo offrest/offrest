@@ -45,6 +45,14 @@ const selectOption = (option) => {
       </header>
 
       <div class="content" v-if="currentQuestion.text">
+        <div class="progress">
+          <div
+            v-for="(bar, index) in questions.length"
+            :key="index"
+            :class="['progress-bar', { active: index < currentQuestion.id }]"
+          ></div>
+        </div>
+
         <p class="title">
           <span>Q{{ currentQuestion.id }}.</span>
           <span>{{ currentQuestion.text }}</span>

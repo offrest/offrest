@@ -25,9 +25,8 @@ const saveName = () => {
         </div>
       </header>
 
-      <div class="content content--pt">
-        <p class="title">
-          <span>Q1.</span>
+      <div class="content">
+        <p class="title title--l">
           <span>이름이나 닉네임을 적어주세요.</span>
         </p>
 

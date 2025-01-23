@@ -20,10 +20,6 @@
 
 .content {
   padding: 0;
-
-  &--pt {
-    padding-top: 0;
-  }
 }
 
 .title {
@@ -60,7 +56,7 @@
 }
 // E : page-2
 
-// S : page-6
+// S : page-5
 .img-box {
   flex-wrap: wrap;
   gap: fv(30);
@@ -86,4 +82,4 @@
 .reset-btn {
   margin-top: fv(100);
 }
-// E : page-6
+// E : page-5

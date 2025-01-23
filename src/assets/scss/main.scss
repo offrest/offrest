@@ -18,6 +18,7 @@
 }
 
 $bg-color: #000;
+$point-color: #2eae16;
 $light: 300;
 $medium: 500;
 $bold: 700;
@@ -101,18 +102,15 @@ $bold: 700;
   }
 
   .content {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: 0 fv(110);
+    padding: fv(77) fv(110) 0;
     text-align: center;
-
-    &--pt {
-      padding-top: fv(77);
-    }
   }
 
   .title {
@@ -123,8 +121,9 @@ $bold: 700;
     font-size: fv(48);
     line-height: lh(68, 48);
     text-align: center;
+    
 
-    &-intro {
+    &--l {
       font-size: fv(50);
       line-height: lh(70, 50);
     }
@@ -191,7 +190,7 @@ $bold: 700;
   .info {
     margin-top: fv(24);
     font-size: fv(24);
-    color: #2eae16;
+    color: $point-color;
   }
 
   .submit-btn {
@@ -199,7 +198,7 @@ $bold: 700;
   }
   // E : page-2
 
-  // S : page-3/4
+  // S : page-3
   .options {
     display: flex;
     flex-direction: column;
@@ -209,7 +208,7 @@ $bold: 700;
   }
   
   .option-btn {
-    padding: fv(32) fv(24) fv(24);
+    padding: fv(28) fv(20) fv(20);
     border: fv(1) solid #fff;
     border-radius: fv(16);
 
@@ -217,9 +216,48 @@ $bold: 700;
     line-height: lh(50, 36);
     font-weight: $light;
   }
-  // E : page-3/4
 
-  // S : page-5
+  .progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: fv(6);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: fv(100);
+    width: 100%;
+    height: fv(6);
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: $point-color;
+      transition: 0.3s width;
+    }
+    
+    &.active {
+      position: relative;
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  // E : page-3
+
+  // S : page-4
   .sound {
     display: flex;
     flex-direction: column;
@@ -282,9 +320,9 @@ $bold: 700;
     width: fv(170);
     margin-top: fv(16);
   }
-  // E : page-5
+  // E : page-4
 
-  // S : page-6
+  // S : page-5
   .user-name {
     font-weight: $medium;
   }
@@ -318,7 +356,7 @@ $bold: 700;
   .reset-btn {
     margin-top: fv(50);
   }
-  // E : page-6
+  // E : page-5
 
   @media screen and (max-width: 720px) {
     @import '../scss/mobile';
