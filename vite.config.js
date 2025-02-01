@@ -15,6 +15,9 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  server: {
+    hmr: false, // WebSocket 비활성화
+  },
   css: {
     preprocessorOptions: {
       scss: {
