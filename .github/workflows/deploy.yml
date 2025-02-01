@@ -22,8 +22,8 @@ jobs:
         run: |
           git clone https://github.com/offrest/offrest.github.io.git
           cd offrest.github.io
-          git config leedoha11 "github-actions[bot]"
-          git config 95dbswn@hanmail.net "github-actions[bot]@users.noreply.github.com"
+          git config user.name "leedoha11"
+          git config user.email "leedoha11@users.noreply.github.com"
 
       - name: Deploy changes to offrest.github.io
         run: |
