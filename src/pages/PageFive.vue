@@ -7,23 +7,71 @@ const router = useRouter();
 const userName = localStorage.getItem('userName');
 
 const result = ref(null);
+const blockCounts = ref({
+  block1: { A: 0, B: 0 },
+  block2: { A: 0, B: 0 },
+  block3: { A: 0, B: 0 },
+  block4: { A: 0, B: 0 },
+});
+
+const blockResults = {
+  block1: { A: 'I', B: 'E' },
+  block2: { A: 'N', B: 'S' },
+  block3: { A: 'F', B: 'T' },
+  block4: { A: 'P', B: 'J' },
+};
+
 const resultMapping = {
-    'A-A-A-A-A-A-A-A': 1,
-    'A-B-A-B-B-A-A-B': 2,
-    // 나머지 경우들...
-  };
+  'I-N-F-P': 1,  
+  'I-N-F-J': 2,  
+  'I-N-T-P': 3,  
+  'I-N-T-J': 4,  
+  'I-S-F-P': 5,  
+  'I-S-F-J': 6,  
+  'I-S-T-P': 7,  
+  'I-S-T-J': 8, 
+  'E-N-F-P': 9,  
+  'E-N-F-J': 10, 
+  'E-N-T-P': 11, 
+  'E-N-T-J': 12, 
+  'E-S-F-P': 13, 
+  'E-S-F-J': 14, 
+  'E-S-T-P': 15,
+  'E-S-T-J': 16, 
+};
   
 // 결과를 계산하는 함수
 const getResult  = () => {
   const savedAnswers = JSON.parse(localStorage.getItem('answers')) || [];
-  const key = savedAnswers.join('-'); // 각 선택지를 결합해 키로 사용
-  const resultNumber = resultMapping[key];
-  result.value = results.find(r => r.number === resultNumber );
+
+ // 각 블록별로 A, B 카운트
+ Object.keys(savedAnswers).forEach((block) => {
+    const answers = savedAnswers[block]; // 예: ["A", "B", "B"]
+    answers.forEach(answer => {
+      if (answer === 'A') {
+        blockCounts.value[block].A++;
+      } else if (answer === 'B') {
+        blockCounts.value[block].B++;
+      }
+    });
+  });
+
+  // 블록 결과 계산
+  const finalResultKey = Object.keys(blockCounts.value).map(block => {
+    const counts = blockCounts.value[block];
+    return counts.A > counts.B ? blockResults[block].A : blockResults[block].B;
+  }).join('-');
+
+  const resultNumber = resultMapping[finalResultKey];
+  result.value = results.find(r => r.number === resultNumber);
+  
+  console.log(finalResultKey);  // 최종 결과 키 확인용 로그
 };
 
 onMounted(() => {
   getResult();
 });
+
 const reset = () => {
   router.push("/");
 };
@@ -73,7 +121,7 @@ const getEmbedUrl = (url) => {
         <p v-else>결과 없음</p>
 
         <p class="desc">이 음악이 휴식이 되었으면 좋겠습니다.</p>
-
+        <p>{{  result }}</p>
         <button
           type="button"
           class="reset-btn rounded-btn"

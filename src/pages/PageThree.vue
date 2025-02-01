@@ -8,7 +8,12 @@ const router = useRouter();
 
 const questions = ref(questionData);
 const currentQuestion = ref({});
-const selectedAnswers = ref([]);
+const selectedAnswers = ref({
+  block1: [], // 질문 1번
+  block2: [], // 질문 2~4번
+  block3: [], // 질문 5~7번
+  block4: []  // 질문 8~10번
+});
 
 const updateQuestion = () => {
   const id = parseInt(route.params.id, 10);
@@ -28,16 +33,23 @@ const formatText = (text) => {
 };
 
 const formattedText = computed(() => formatText(currentQuestion.value.text || ''));
-const formattedOptionA = computed(() => formatText(currentQuestion.value.A || ''));
-const formattedOptionB = computed(() => formatText(currentQuestion.value.B || ''));
+// const formattedOptionA = computed(() => formatText(currentQuestion.value.A || ''));
+// const formattedOptionB = computed(() => formatText(currentQuestion.value.B || ''));
 // 확인요청 :: 내용 추가
 
 const selectOption = (option) => {
   const id = parseInt(route.params.id, 10);
   const question = questions.value.find(q => q.id === id);
 
+  // 질문 id에 따라 해당 블록 구분
+  let block;
+  if (id === 1) block = 'block1'; // 1번 질문은 block1
+  else if (id >= 2 && id <= 4) block = 'block2'; // 2~4번은 block2
+  else if (id >= 5 && id <= 7) block = 'block3'; // 5~7번은 block3
+  else if (id >= 8 && id <= 10) block = 'block4'; // 8~10번은 block4
+
   const selectedKey = question.A === option ? 'A' : 'B';
-  selectedAnswers.value[id - 1] = selectedKey;
+  selectedAnswers.value[block].push(selectedKey);
   localStorage.setItem('answers', JSON.stringify(selectedAnswers.value));
 
   const nextId = id + 1;
@@ -61,7 +73,7 @@ const selectOption = (option) => {
       <div class="content" v-if="currentQuestion.text">
         <div class="progress">
           <div
-            v-for="(bar, index) in questions.length"
+            v-for="(question, index) in questions.length"
             :key="index"
             :class="['progress-bar', { active: index < currentQuestion.id }]"
           ></div>
@@ -83,11 +95,11 @@ const selectOption = (option) => {
              {{ option }} 삭제 후 v-html="option" 추가
             -->
             <button
-              v-for="(option, index) in [formattedOptionA, formattedOptionB]"
+              v-for="(option, index) in [currentQuestion.A, currentQuestion.B]"
               :key="index"
               :class="['option-btn']"
               @click="selectOption(option)"
-              v-html="option"
+              v-html="formatText(option)"
             >
             </button>
           </div>
