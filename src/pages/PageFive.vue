@@ -66,11 +66,12 @@ const getResult  = () => {
   result.value = results.find(r => r.number === resultNumber);
   
   if (result.value) {
-    result.value.qrcode = `${result.value.qrcode}`;
+    if (!result.value.qrcode.startsWith('/images/')) {
+      result.value.qrcode = `/images/${result.value.qrcode}`;
+    } 
   }
- 
-  console.log('이미지', result.value.qrcode ,'여기까지');
-  console.log(finalResultKey);  // 최종 결과 키 확인용 로그
+  // console.log('******', result.value.qrcode ,'******');
+  // console.log(finalResultKey);  // 최종 결과 키 확인용 로그
 };
 
 onMounted(() => {
