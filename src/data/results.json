@@ -16,7 +16,7 @@
   }
   ,
   {
-   "number": 3,
+    "number": 3,
     "name": "플리3",
     "type": "INTP",
     "youtube": "https://www.youtube.com/watch?v=PMWItLXM3sU&t=273s",
@@ -32,7 +32,7 @@
   }
   ,
   {
-   "number": 5,
+    "number": 5,
     "name": "플리5",
     "type": "ISFP",
     "youtube": "https://www.youtube.com/watch?v=21I3axUgTSQ&t=1408s",
