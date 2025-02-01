@@ -120,7 +120,7 @@ const getEmbedUrl = (url) => {
         </div>
         <p v-else>결과 없음</p>
 
-        <p class="desc"> 음악이 휴식이 되었으면 좋겠습니다.</p>
+        <p class="desc">이 음악이 휴식이 되었으면 좋겠습니다.</p>
 
         <button
           type="button"
