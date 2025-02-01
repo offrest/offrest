@@ -2,128 +2,128 @@
   {
     "number": 1,
     "name": "플리1",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "INFP",
+    "youtube": "https://www.youtube.com/watch?v=echAGPIvROA",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
     "number": 2,
     "name": "플리2",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "INFJ",
+    "youtube": "https://www.youtube.com/watch?v=8RSQ4BlgMe4&t=1881s",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
    "number": 3,
     "name": "플리3",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "INTP",
+    "youtube": "https://www.youtube.com/watch?v=PMWItLXM3sU&t=273s",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
     "number": 4,
     "name": "플리4",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "INTJ",
+    "youtube": "https://www.youtube.com/watch?v=KiOAtVRy_ok&t=553s",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
    "number": 5,
     "name": "플리5",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "ISFP",
+    "youtube": "https://www.youtube.com/watch?v=21I3axUgTSQ&t=1408s",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
     "number": 6,
     "name": "플리6",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "ISFJ",
+    "youtube": "https://www.youtube.com/watch?v=neztijKNwLM&t=1220s",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
     "number": 7,
     "name": "플리7",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "ISTP",
+    "youtube": "https://www.youtube.com/watch?v=4fj4kVl65K8",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
     "number": 8,
     "name": "플리8",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "ISTJ",
+    "youtube": "https://www.youtube.com/watch?v=a0QWgXYYs1w&t=1135s",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
     "number": 9,
     "name": "플리9",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "ENFP",
+    "youtube": "https://www.youtube.com/watch?v=m2kEIlUFU0Y&t=1462s",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
     "number": 10,
     "name": "플리10",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "ENFJ",
+    "youtube": "https://www.youtube.com/watch?v=c6Ls0SrqxXk&t=472s",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
     "number": 11,
     "name": "플리11",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "ENTP",
+    "youtube": "https://www.youtube.com/watch?v=RPhH2FLB1ms",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
     "number": 12,
     "name": "플리12",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "ENTJ",
+    "youtube": "https://www.youtube.com/watch?v=jr42n8gCK-E&t=2729s",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
     "number": 13,
     "name": "플리13",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "ESFP",
+    "youtube": "https://www.youtube.com/watch?v=ECJ4OO8KGCY",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
     "number": 14,
     "name": "플리14",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "ESFJ",
+    "youtube": "https://www.youtube.com/watch?v=QsHkJVg76Ag&t=8s",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
     "number": 15,
     "name": "플리15",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "ESTP",
+    "youtube": "https://www.youtube.com/watch?v=z90L8FyjXVk&t=946s",
     "qrcode": "qr이미지 경로"
   }
   ,
   {
     "number": 16,
     "name": "플리16",
-    "type": "Weather",
-    "youtube": "https://youtu.be/DSwI1_8INBE?si=-ndQ9LwC9sFdYhwf",
+    "type": "ESTJ",
+    "youtube": "https://www.youtube.com/watch?v=DSwI1_8INBE&t=24s",
     "qrcode": "qr이미지 경로"
   }
 ]
