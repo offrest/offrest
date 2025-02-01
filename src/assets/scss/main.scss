@@ -108,8 +108,12 @@ $bold: 700;
     align-items: center;
     width: 100%;
     height: 100%;
-    padding: fv(77) fv(110) 0;
+    padding-top: fv(77);
     text-align: center;
+
+    &--none {
+      padding-top: 0;
+    }
   }
 
   .title {
@@ -201,16 +205,15 @@ $bold: 700;
   .options {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;    
     gap: fv(26);
     padding: 0 fv(40);
   }
   
   .option-btn {
-    padding: fv(28) fv(20) fv(20);
+    padding: fv(26) fv(24) fv(18);
     border: fv(1) solid #fff;
     border-radius: fv(16);
-
     font-size: fv(36);
     line-height: lh(50, 36);
     font-weight: $light;
@@ -225,7 +228,7 @@ $bold: 700;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: fv(100);
+    margin-top: fv(90);
     width: fv(400);
     height: fv(6);
   }
