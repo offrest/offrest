@@ -65,6 +65,11 @@ const getResult  = () => {
   const resultNumber = resultMapping[finalResultKey];
   result.value = results.find(r => r.number === resultNumber);
   
+  if (result.value) {
+    result.value.qrcode = `${result.value.qrcode}`;
+  }
+ 
+  console.log('이미지', result.value.qrcode ,'여기까지');
   console.log(finalResultKey);  // 최종 결과 키 확인용 로그
 };
 

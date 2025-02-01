@@ -4,7 +4,7 @@
     "name": "플리1",
     "type": "INFP",
     "youtube": "https://www.youtube.com/watch?v=echAGPIvROA",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "infp.jpg"
   }
   ,
   {
@@ -12,7 +12,7 @@
     "name": "플리2",
     "type": "INFJ",
     "youtube": "https://www.youtube.com/watch?v=8RSQ4BlgMe4&t=1881s",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "infj.jpg"
   }
   ,
   {
@@ -20,7 +20,7 @@
     "name": "플리3",
     "type": "INTP",
     "youtube": "https://www.youtube.com/watch?v=PMWItLXM3sU&t=273s",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "intp.jpg"
   }
   ,
   {
@@ -28,7 +28,7 @@
     "name": "플리4",
     "type": "INTJ",
     "youtube": "https://www.youtube.com/watch?v=KiOAtVRy_ok&t=553s",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "intj.jpg"
   }
   ,
   {
@@ -36,7 +36,7 @@
     "name": "플리5",
     "type": "ISFP",
     "youtube": "https://www.youtube.com/watch?v=21I3axUgTSQ&t=1408s",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "isfp.jpg"
   }
   ,
   {
@@ -44,7 +44,7 @@
     "name": "플리6",
     "type": "ISFJ",
     "youtube": "https://www.youtube.com/watch?v=neztijKNwLM&t=1220s",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "isfj.jpg"
   }
   ,
   {
@@ -52,7 +52,7 @@
     "name": "플리7",
     "type": "ISTP",
     "youtube": "https://www.youtube.com/watch?v=4fj4kVl65K8",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "istp.jpg"
   }
   ,
   {
@@ -60,7 +60,7 @@
     "name": "플리8",
     "type": "ISTJ",
     "youtube": "https://www.youtube.com/watch?v=a0QWgXYYs1w&t=1135s",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "istj.jpg"
   }
   ,
   {
@@ -68,7 +68,7 @@
     "name": "플리9",
     "type": "ENFP",
     "youtube": "https://www.youtube.com/watch?v=m2kEIlUFU0Y&t=1462s",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "enfp.jpg"
   }
   ,
   {
@@ -76,7 +76,7 @@
     "name": "플리10",
     "type": "ENFJ",
     "youtube": "https://www.youtube.com/watch?v=c6Ls0SrqxXk&t=472s",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "enfj.jpg"
   }
   ,
   {
@@ -84,7 +84,7 @@
     "name": "플리11",
     "type": "ENTP",
     "youtube": "https://www.youtube.com/watch?v=RPhH2FLB1ms",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "entp.jpg"
   }
   ,
   {
@@ -92,7 +92,7 @@
     "name": "플리12",
     "type": "ENTJ",
     "youtube": "https://www.youtube.com/watch?v=jr42n8gCK-E&t=2729s",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "entj.jpg"
   }
   ,
   {
@@ -100,7 +100,7 @@
     "name": "플리13",
     "type": "ESFP",
     "youtube": "https://www.youtube.com/watch?v=ECJ4OO8KGCY",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "esfp.jpg"
   }
   ,
   {
@@ -108,7 +108,7 @@
     "name": "플리14",
     "type": "ESFJ",
     "youtube": "https://www.youtube.com/watch?v=QsHkJVg76Ag&t=8s",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "esfj.jpg"
   }
   ,
   {
@@ -116,7 +116,7 @@
     "name": "플리15",
     "type": "ESTP",
     "youtube": "https://www.youtube.com/watch?v=z90L8FyjXVk&t=946s",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "estp.jpg"
   }
   ,
   {
@@ -124,6 +124,6 @@
     "name": "플리16",
     "type": "ESTJ",
     "youtube": "https://www.youtube.com/watch?v=DSwI1_8INBE&t=24s",
-    "qrcode": "qr이미지 경로"
+    "qrcode": "estj.jpg"
   }
 ]
