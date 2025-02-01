@@ -77,12 +77,15 @@ const reset = () => {
 };
 
 const getEmbedUrl = (url) => {
-      if (url.startsWith('https://youtu.be/')) {
-        const videoId = url.split('/').pop().split('?')[0];
-        return `https://www.youtube.com/embed/${videoId}`;
-      }
-      return null; 
-    };
+  if (url.startsWith('https://youtu.be/')) {
+    const videoId = url.split('/').pop().split('?')[0];
+    return `https://www.youtube.com/embed/${videoId}`;
+  } else if (url.startsWith('https://www.youtube.com/watch?v=')) {
+    const videoId = new URL(url).searchParams.get('v');
+    return `https://www.youtube.com/embed/${videoId}`;
+  }
+  return null; 
+};
 </script>
 
 <template>
