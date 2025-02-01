@@ -14,7 +14,8 @@ jobs:
 
       - name: Set up GitHub App authentication
         run: |
-          export GH_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          echo "${{ secrets.GH_APP_PRIVATE_KEY }}" > private-key.pem
+          export GH_TOKEN=$(gh auth login --with-token < private-key.pem)
           gh auth status
 
       - name: Clone offrest.github.io
