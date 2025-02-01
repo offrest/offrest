@@ -46,7 +46,7 @@ const getResult  = () => {
 
  // 각 블록별로 A, B 카운트
  Object.keys(savedAnswers).forEach((block) => {
-    const answers = savedAnswers[block]; // 예: ["A", "B", "B"]
+    const answers = savedAnswers[block]; 
     answers.forEach(answer => {
       if (answer === 'A') {
         blockCounts.value[block].A++;
@@ -120,7 +120,7 @@ const getEmbedUrl = (url) => {
         </div>
         <p v-else>결과 없음</p>
 
-        <p class="desc">이 음악이 휴식이 되었으면 좋겠습니다.</p>
+        <p class="desc"> 음악이 휴식이 되었으면 좋겠습니다.</p>
         <p>{{  result }}</p>
         <button
           type="button"
