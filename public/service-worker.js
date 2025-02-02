@@ -30,3 +30,16 @@ self.addEventListener("activate", (event) => {
     })
   );
 });
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open("pwa-cache").then((cache) => {
+      return cache.addAll([
+        "/",
+        "/icons/icon-192x192.png",
+        "/icons/icon-512x512.png",
+        "/manifest.json"
+      ]);
+    })
+  );
+});
