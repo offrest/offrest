@@ -3,7 +3,7 @@ name: Deploy to offrest.github.io
 on:
   push:
     branches:
-      - hotfix/deploy  # main 브랜치에 push할 때 실행
+      - hotfix/deploy  # hotfix/deploy 브랜치에 push할 때 실행
 
 jobs:
   deploy:
@@ -12,18 +12,23 @@ jobs:
       - name: Checkout offrest
         uses: actions/checkout@v3
 
-      - name: Set up GitHub App authentication
+      - name: Install dependencies & Build
         run: |
-          echo "${{ secrets.GH_APP_PRIVATE_KEY }}" > private-key.pem
-          export GH_TOKEN=$(gh auth login --with-token < private-key.pem)
-          gh auth status
+          npm install
+          npm run build
+          
+      - name: Authenticate with GitHub using PAT
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git config --global user.name "leedoha11"
+          git config --global user.email "leedoha11@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/offrest/offrest.github.io.git
 
       - name: Clone offrest.github.io
         run: |
           git clone https://github.com/offrest/offrest.github.io.git
           cd offrest.github.io
-          git config user.name "leedoha11"
-          git config user.email "leedoha11@users.noreply.github.com"
 
       - name: Deploy changes to offrest.github.io
         run: |
