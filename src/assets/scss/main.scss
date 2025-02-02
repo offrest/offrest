@@ -132,9 +132,8 @@ $bold: 700;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: fv(2);
     font-size: fv(48);
-    line-height: lh(60, 48);
+    line-height: lh(64, 48);
     text-align: center;
     
 
@@ -240,13 +239,10 @@ $bold: 700;
     justify-content: center;
     align-items: center;
     gap: fv(6);
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: fv(100);
+    transform: translateY(fv(-80));
     width: fv(400);
     height: fv(6);
+    justify-self: start;
   }
 
   .progress-bar {
