@@ -22,6 +22,16 @@ $light: 300;
 $medium: 500;
 $bold: 700;
 
+// 모바일 가로모드 전환 방지
+@media screen and (max-width: 720px) {
+  body {
+    transform: rotate(0deg) !important;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
 .vue-devtools__panel[data-v-e9063f7b] {
   display: none;
 }
@@ -123,7 +133,7 @@ $bold: 700;
     justify-content: center;
     align-items: center;
     font-size: fv(48);
-    line-height: lh(68, 48);
+    line-height: lh(64, 48);
     text-align: center;
     
 
@@ -229,17 +239,15 @@ $bold: 700;
     justify-content: center;
     align-items: center;
     gap: fv(6);
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: fv(100);
+    transform: translateY(fv(-80));
     width: fv(400);
     height: fv(6);
+    justify-self: start;
   }
 
   .progress-bar {
-    width: 100%;
+    position: relative;
+    flex: 1;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.3);
     
@@ -256,7 +264,6 @@ $bold: 700;
     }
     
     &.active {
-      position: relative;
       &::after {
         width: 100%;
       }
