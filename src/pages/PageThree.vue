@@ -23,13 +23,6 @@ const updateQuestion = () => {
 
 watch(() => route.params.id, updateQuestion, { immediate: true });
 
-const formatText = (text) => {
-  return text
-    ? text
-      .replace(/\nmo/g, '<br class="mo-only"/>') // 모바일만 줄바꿈
-  : '';
-};
-
 const formattedText = computed(() => formatText(currentQuestion.value.text || ''));
 
 const selectOption = (option) => {
@@ -54,6 +47,14 @@ const selectOption = (option) => {
     router.push('/page-4'); // 로딩페이지로 이동동
   }
 };
+
+// 모바일만 줄바꿈 적용
+const formatText = (text) => {
+  return text
+    ? text
+      .replace(/\nmo/g, '<br class="mo-only"/>')
+  : '';
+};
 </script>
 
 <template>
@@ -68,7 +69,7 @@ const selectOption = (option) => {
       <div class="content" v-if="currentQuestion.text">
         <div class="progress">
           <div
-            v-for="(question, index) in questions.length"
+            v-for="(question, index) in questions"
             :key="index"
             :class="['progress-bar', { active: index < currentQuestion.id }]"
           ></div>
