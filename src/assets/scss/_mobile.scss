@@ -19,7 +19,8 @@ header {
 }
 
 .content {
-  padding: 0;
+  padding-top: fv(67);
+  padding-bottom: fv(67);
 }
 
 .title {
@@ -63,11 +64,6 @@ header {
 // E : page-3
 
 // S : page-5
-iframe {
-  width: fv(480);
-  height: 100%;
-}
-
 .img-box {
   flex-wrap: wrap;
   gap: fv(30);

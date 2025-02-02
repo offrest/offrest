@@ -103,14 +103,13 @@ const getEmbedUrl = (url) => {
         </div>
       </header>
 
-      <div class="content content--pt">
+      <div class="content content--py">
         <div v-if="result">
           <p class="title title--mo">
             <span class="user-name">{{ userName }}</span> 님을 위해 추천드립니다.
           </p>
 
           <div class="img-box">
-
             <!-- 유튜브 영상 iframe 삽입 -->
             <iframe
               :src="getEmbedUrl(result.youtube)"
@@ -118,6 +117,7 @@ const getEmbedUrl = (url) => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
               title="YouTube video"
+              class="img img-thumb"
             ></iframe>
 
             <!-- QR 코드 삽입 -->

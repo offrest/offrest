@@ -22,16 +22,6 @@ $light: 300;
 $medium: 500;
 $bold: 700;
 
-// 모바일 가로모드 전환 방지
-@media screen and (max-width: 720px) {
-  body {
-    transform: rotate(0deg) !important;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
-}
-
 .vue-devtools__panel[data-v-e9063f7b] {
   display: none;
 }
@@ -41,7 +31,6 @@ $bold: 700;
   width: 100%;
   height: 100vh;
   background-color: $bg-color;
-  overflow: hidden;
 
   font-family: 'SBAggroB', sans-serif;
   line-height: 1;
@@ -122,8 +111,13 @@ $bold: 700;
     padding-top: fv(77);
     text-align: center;
 
-    &--none {
+    &--py {
+      padding-bottom: fv(77);
+    }
+
+    &--pn {
       padding-top: 0;
+      padding-bottom: 0;
     }
   }
 
@@ -341,35 +335,30 @@ $bold: 700;
     font-weight: $medium;
   }
 
-  iframe {
-    width: fv(420);
-    height: fv(236);
-  }
-
   .img-box {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: fv(34);
-    margin-top: fv(30);
+    margin-top: fv(20);
   }
 
   .img {
-    border: 1px solid #fff;
-
     &-thumb {
-      width: fv(420);
-      height: fv(230);
+      width: fv(370);
+      height: fv(210);
+      border: 1px solid #424242;
     }
     &-code {
-      width: fv(230);
+      width: fv(210);
+      border: 1px solid #fff;
     }
   }
 
   .desc {
-    margin-top: fv(40);
-    font-size: fv(44);
-    line-height: lh(52, 44);
+    margin-top: fv(30);
+    font-size: fv(42);
+    line-height: lh(52, 42);
   }
 
   .reset-btn {
