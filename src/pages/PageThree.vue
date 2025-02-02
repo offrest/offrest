@@ -23,19 +23,14 @@ const updateQuestion = () => {
 
 watch(() => route.params.id, updateQuestion, { immediate: true });
 
-// 확인요청 :: 내용 추가
 const formatText = (text) => {
   return text
     ? text
       .replace(/\nmo/g, '<br class="mo-only"/>') // 모바일만 줄바꿈
-      .replace(/\nall/g, '<br />')
   : '';
 };
 
 const formattedText = computed(() => formatText(currentQuestion.value.text || ''));
-// const formattedOptionA = computed(() => formatText(currentQuestion.value.A || ''));
-// const formattedOptionB = computed(() => formatText(currentQuestion.value.B || ''));
-// 확인요청 :: 내용 추가
 
 const selectOption = (option) => {
   const id = parseInt(route.params.id, 10);
@@ -81,19 +76,12 @@ const selectOption = (option) => {
 
         <p class="title">
           <span>Q{{ currentQuestion.id }}.</span>
-          <!-- 확인요청 ::
-           {{ currentQuestion.text }} 삭제 후 v-html="formattedText" 추가
-          -->
           <span v-html="formattedText"></span>
         </p>
 
         <div class="detail">
           <!-- 선택지 리스트 -->
           <div class="options">
-            <!-- 확인요청 ::
-             [currentQuestion.A, currentQuestion.B] 변경,
-             {{ option }} 삭제 후 v-html="option" 추가
-            -->
             <button
               v-for="(option, index) in [currentQuestion.A, currentQuestion.B]"
               :key="index"

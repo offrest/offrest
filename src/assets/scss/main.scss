@@ -22,6 +22,16 @@ $light: 300;
 $medium: 500;
 $bold: 700;
 
+// 모바일 가로모드 전환 방지
+@media screen and (max-width: 720px) {
+  body {
+    transform: rotate(0deg) !important;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
 .vue-devtools__panel[data-v-e9063f7b] {
   display: none;
 }
@@ -122,8 +132,9 @@ $bold: 700;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: fv(2);
     font-size: fv(48);
-    line-height: lh(68, 48);
+    line-height: lh(60, 48);
     text-align: center;
     
 
