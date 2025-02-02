@@ -22,31 +22,31 @@ const blockResults = {
 };
 
 const resultMapping = {
-  'I-N-F-P': 1,  
-  'I-N-F-J': 2,  
-  'I-N-T-P': 3,  
-  'I-N-T-J': 4,  
-  'I-S-F-P': 5,  
-  'I-S-F-J': 6,  
-  'I-S-T-P': 7,  
-  'I-S-T-J': 8, 
-  'E-N-F-P': 9,  
-  'E-N-F-J': 10, 
-  'E-N-T-P': 11, 
-  'E-N-T-J': 12, 
-  'E-S-F-P': 13, 
-  'E-S-F-J': 14, 
+  'I-N-F-P': 1,
+  'I-N-F-J': 2,
+  'I-N-T-P': 3,
+  'I-N-T-J': 4,
+  'I-S-F-P': 5,
+  'I-S-F-J': 6,
+  'I-S-T-P': 7,
+  'I-S-T-J': 8,
+  'E-N-F-P': 9,
+  'E-N-F-J': 10,
+  'E-N-T-P': 11,
+  'E-N-T-J': 12,
+  'E-S-F-P': 13,
+  'E-S-F-J': 14,
   'E-S-T-P': 15,
-  'E-S-T-J': 16, 
+  'E-S-T-J': 16,
 };
-  
+
 // 결과를 계산하는 함수
 const getResult  = () => {
   const savedAnswers = JSON.parse(localStorage.getItem('answers')) || [];
 
- // 각 블록별로 A, B 카운트
- Object.keys(savedAnswers).forEach((block) => {
-    const answers = savedAnswers[block]; 
+  // 각 블록별로 A, B 카운트
+  Object.keys(savedAnswers).forEach((block) => {
+    const answers = savedAnswers[block];
     answers.forEach(answer => {
       if (answer === 'A') {
         blockCounts.value[block].A++;
@@ -64,11 +64,11 @@ const getResult  = () => {
 
   const resultNumber = resultMapping[finalResultKey];
   result.value = results.find(r => r.number === resultNumber);
-  
+
   if (result.value) {
     if (!result.value.qrcode.startsWith('/images/')) {
       result.value.qrcode = `/images/${result.value.qrcode}`;
-    } 
+    }
   }
   // console.log('******', result.value.qrcode ,'******');
   // console.log(finalResultKey);  // 최종 결과 키 확인용 로그
@@ -90,7 +90,7 @@ const getEmbedUrl = (url) => {
     const videoId = new URL(url).searchParams.get('v');
     return `https://www.youtube.com/embed/${videoId}`;
   }
-  return null; 
+  return null;
 };
 </script>
 
@@ -106,12 +106,11 @@ const getEmbedUrl = (url) => {
       <div class="content content--pt">
         <div v-if="result">
           <p class="title title--mo">
-            <span class="user-name">{{ userName }}</span> 님을 <br class="mo-only"/>
-            위해 추천드립니다.
+            <span class="user-name">{{ userName }}</span> 님을 위해 추천드립니다.
           </p>
 
           <div class="img-box">
-            
+
             <!-- 유튜브 영상 iframe 삽입 -->
             <iframe
               :src="getEmbedUrl(result.youtube)"

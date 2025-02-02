@@ -9,10 +9,10 @@
   padding: fv(30);
 }
 
-  header {
-    margin-top: fv(30);
-    margin-left: fv(30);
-  }
+header {
+  margin-top: fv(30);
+  margin-left: fv(30);
+}
 
 .logo {
   width: fv(100);
@@ -63,6 +63,11 @@
 // E : page-3
 
 // S : page-5
+iframe {
+  width: fv(480);
+  height: 100%;
+}
+
 .img-box {
   flex-wrap: wrap;
   gap: fv(30);
@@ -80,7 +85,6 @@
 }
 
 .desc {
-  margin-top: fv(30);
   font-size: fv(34);
   line-height: lh(50, 34);
 }

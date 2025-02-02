@@ -31,6 +31,7 @@ $bold: 700;
   width: 100%;
   height: 100vh;
   background-color: $bg-color;
+  overflow: hidden;
 
   font-family: 'SBAggroB', sans-serif;
   line-height: 1;
@@ -217,6 +218,10 @@ $bold: 700;
     font-size: fv(36);
     line-height: lh(50, 36);
     font-weight: $light;
+
+    &:active {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
   }
 
   .progress {
@@ -228,7 +233,7 @@ $bold: 700;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: fv(90);
+    margin-top: fv(100);
     width: fv(400);
     height: fv(6);
   }
@@ -329,6 +334,11 @@ $bold: 700;
     font-weight: $medium;
   }
 
+  iframe {
+    width: fv(420);
+    height: fv(236);
+  }
+
   .img-box {
     display: flex;
     justify-content: center;
@@ -351,8 +361,8 @@ $bold: 700;
 
   .desc {
     margin-top: fv(40);
-    font-size: fv(46);
-    line-height: lh(54, 46);
+    font-size: fv(44);
+    line-height: lh(52, 44);
   }
 
   .reset-btn {
