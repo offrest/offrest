@@ -13,7 +13,7 @@ onMounted(() => {
 
 <template>
   <section class="section">
-    <div class="content content--none">
+    <div class="content content--pn">
       <div class='sound'>
         <div class='sound-wave'>
           <i class='bar'></i>
