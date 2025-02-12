@@ -20,13 +20,12 @@ const saveName = () => {
     return;
   }
   localStorage.setItem('userName', textInput.value);
-  
   router.push("/page-3/1");
 };
 
 const handleEnter = () => {
-  textInput.value.blur(); 
   Keyboard.dismiss();
+  textInput.value.blur(); 
   saveName(); 
 };
 
