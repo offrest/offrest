@@ -1,7 +1,14 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from "vue-router";
+import { onMounted } from 'vue';
 
+onMounted(() => {
+  const inputElement = document.querySelector('input');
+  if (inputElement) {
+    inputElement.focus();
+  }
+});
 const router = useRouter();
 
 const textInput = ref('');
