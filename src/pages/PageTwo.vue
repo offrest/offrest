@@ -19,9 +19,15 @@ const saveName = () => {
     return;
   }
   localStorage.setItem('userName', textInput.value);
-  textInput.value.blur();  // 이 부분을 추가
+  
   router.push("/page-3/1");
 };
+
+const handleEnter = () => {
+  textInput.value.blur(); 
+  saveName(); 
+};
+
 </script>
 
 <template>
@@ -45,6 +51,8 @@ const saveName = () => {
               type="text"
               maxlength="10"
               placeholder="10자 이내로 입력해 주세요."
+              @keyup.enter="handleEnter"
+              
             />
           </div>
           <span class="info">※ 필수로 기재해 주셔야 합니다.</span>
