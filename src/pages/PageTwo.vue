@@ -23,8 +23,8 @@ const saveName = () => {
 };
 
 const handleEnter = () => {
-  textInput.value.blur(); 
   saveName(); 
+  textInput.value.blur(); 
 };
 
 </script>
