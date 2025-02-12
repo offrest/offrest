@@ -15,11 +15,11 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  server: {
-    host: '0.0.0.0',
-    port: 3000,
-    hmr: false, // WebSocket 비활성화
-  },
+  // server: {
+  //   host: '0.0.0.0',
+  //   port: 3000,
+  //   hmr: false, // WebSocket 비활성화
+  // },
   css: {
     preprocessorOptions: {
       scss: {
@@ -29,9 +29,4 @@ export default defineConfig({
       },
     },
   },
-  build: {
-    rollupOptions: {
-      external: ['@capacitor/keyboard'] 
-    }
-  }
 })
