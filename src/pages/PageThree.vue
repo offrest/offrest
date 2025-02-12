@@ -100,5 +100,24 @@ const formatText = (text) => {
 </template>
 
 <style lang="scss" scoped>
+  @import '@/assets/scss/_util.scss';
 
+  .title {
+    font-size: fv(48); // 폰트 크기
+    line-height: lh(64, 48); // 행간
+  }
+
+  .option-btn {
+    padding: fv(26) fv(24) fv(18); // 버튼 여백 값:상 좌우 하
+    font-size: fv(36);
+    line-height: lh(50, 36);
+  }
+
+  // 모바일 스타일
+  @media screen and (max-width: 720px) {
+    .title {
+      font-size: fv(42);
+      line-height: lh(58, 42);
+    }
+  }
 </style>
