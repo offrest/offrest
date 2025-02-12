@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { useRouter } from "vue-router";
 import { onMounted } from 'vue';
+import { Keyboard } from '@capacitor/keyboard';
 
 onMounted(() => {
   const inputElement = document.querySelector('input');
@@ -25,6 +26,7 @@ const saveName = () => {
 
 const handleEnter = () => {
   textInput.value.blur(); 
+  Keyboard.dismiss();
   saveName(); 
 };
 
