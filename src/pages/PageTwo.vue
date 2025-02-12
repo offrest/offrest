@@ -19,6 +19,7 @@ const saveName = () => {
     return;
   }
   localStorage.setItem('userName', textInput.value);
+  textInput.value.blur();  // 이 부분을 추가
   router.push("/page-3/1");
 };
 </script>
