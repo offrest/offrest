@@ -1,17 +1,32 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from "vue-router";
-import { onMounted } from 'vue';
+import { onMounted, onBeforeUnmount  } from 'vue';
 
 onMounted(() => {
+  visualViewport && visualViewport.addEventListener("resize", resizeHandler);
+});
+
+const router = useRouter();
+const textInput = ref('');
+
+const resizeHeight = ref(0);
+
+const handleFocus = () => {
   const inputElement = document.querySelector('input');
   if (inputElement) {
     inputElement.focus();
   }
-});
-const router = useRouter();
+};
 
-const textInput = ref('');
+const resizeHandler = () => {
+  const visualHeight = visualViewport ? visualViewport.height : window.innerHeight;
+  resizeHeight.value = window.innerHeight - visualHeight; // 키보드가 올라올 때 뷰포트 차이를 계산
+};
+
+onBeforeUnmount(() => {
+  visualViewport && visualViewport.removeEventListener("resize", resizeHandler);
+});
 
 const saveName = () => {
   if(textInput.value.trim() === '') {
@@ -51,16 +66,20 @@ const handleEnter = () => {
               maxlength="10"
               placeholder="10자 이내로 입력해 주세요."
               @keyup.enter="handleEnter"
-              
+              @focus="handleFocus"
             />
           </div>
           <span class="info">※ 필수로 기재해 주셔야 합니다.</span>
 
-          <button
-            type="submit"
-            class="submit-btn rounded-btn"
-            @click="saveName">등록하기
-          </button>
+          <div class="detail" :style="{ marginBottom: resizeHeight + 'px' }">
+            <button
+              type="submit"
+              class="submit-btn rounded-btn"
+              @click="saveName"
+            >
+              등록하기
+            </button>
+          </div>
         </div>
       </div>
     </div>
