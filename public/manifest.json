@@ -1,6 +1,6 @@
 {
-  "name": "My PWA App",
-  "short_name": "PWA App",
+  "name": "OFF'REST",
+  "short_name": "OFF'REST",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
