@@ -6,34 +6,54 @@
   width: 100%;
   max-width: 720px;
   min-width: 100%;
-  padding: fv(30);
+  padding: fv(40) fv(30);
 }
 
 header {
-  margin-top: fv(30);
-  margin-left: fv(30);
+  margin-top: fv(40);
+  margin-left: fv(40);
 }
 
 .logo {
-  width: fv(100);
+  width: fv(140);
 }
 
 .content {
-  padding-top: fv(67);
-  padding-bottom: fv(67);
+  padding-top: fv(90);
+  padding-bottom: fv(90);
+
+  &--py {
+    padding-bottom: fv(90);
+  }
 }
 
 .title {
-  gap: fv(6);
-  font-size: fv(42);
-  line-height: lh(58, 42);
+  gap: fv(10);
+  font-size: fv(50);
+  line-height: lh(68, 50);
 }
+
+.detail {
+  margin-top: fv(60);
+}
+
+.rounded-btn {
+  font-size: fv(48);
+  padding: fv(20) fv(32) fv(6);
+}
+
 // E : common
 
 // S : page-1
+.obj {
+  width: fv(140);
+  margin-top: fv(80);
+}
+
 .start-btn {
+  margin-top: fv(80);
   padding-right: fv(28);
-  font-size: fv(44);
+  font-size: fv(52);
 
   &::after {
     width: fv(15);
@@ -45,23 +65,40 @@ header {
 // S : page-2
 .input-box {
   > input {
-    width: fv(472);
-    padding: fv(10);
+    width: fv(520);
+    padding: fv(8);
     
-    font-size: fv(38);
+    font-size: fv(42);
   }
 }
 
 .info {
-  font-size: fv(26);
+  font-size: fv(32);
 }
 // E : page-2
 
 // S : page-3
+.options {
+  gap: fv(26);
+  padding: 0 fv(40);
+}
+
+.option-btn {
+  padding: fv(26) fv(24) fv(18);
+  font-size: fv(42);
+  line-height: lh(52, 42);
+}
+
 .progress {
-  width: fv(300);
+  width: fv(340);
 }
 // E : page-3
+
+// S : page-4
+.sound {
+  transform: scale(1.2);
+}
+// E : page-4
 
 // S : page-5
 .img-box {
@@ -72,17 +109,18 @@ header {
 
 .img {
   &-thumb {
-    width: fv(360);
-    height: fv(200);
+    width: fv(380);
+    height: fv(218);
   }
   &-code {
-    width: fv(200);
+    width: fv(218);
   }
 }
 
 .desc {
-  font-size: fv(34);
-  line-height: lh(50, 34);
+  margin-top: fv(40);
+  font-size: fv(40);
+  line-height: lh(50, 40);
 }
 
 .reset-btn {

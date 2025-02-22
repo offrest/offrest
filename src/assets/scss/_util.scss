@@ -2,7 +2,7 @@
 @use "sass:string";
 @use "sass:map";
 
-@function fluid($min, $max, $minVw: 375, $maxVw: 1920) {
+@function fluid($min, $max, $minVw: 320, $maxVw: 1600) {
   $var: math.div(math.abs($max - $min), $maxVw - $minVw);
 
   @if $max > $min {
@@ -22,8 +22,8 @@
   }
 }
 
-$min-width: 720 !default;
-$max-width: 1366 !default;
+$min-width: 721 !default;
+$max-width: 1600 !default;
 
 @function fv($value) {
   $ratio: math.div($min-width, $max-width);
