@@ -35,7 +35,7 @@ html, body {
 .section {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-color: $bg-color;
 
   font-family: 'SBAggroB', sans-serif;
@@ -136,6 +136,7 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: fv(10);
     font-size: fv(48);
     line-height: lh(64, 48);
     text-align: center;
@@ -359,11 +360,11 @@ html, body {
   .img {
     &-thumb {
       width: fv(400);
-      height: fv(228);
+      height: fv(226);
       border: 1px solid #424242;
     }
     &-code {
-      width: fv(228);
+      width: fv(226);
       border: 1px solid #fff;
     }
   }
