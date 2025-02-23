@@ -3,43 +3,57 @@
 }
 
 .container {
-  max-width: 768px;
+  width: 100%;
+  max-width: 720px;
   min-width: 100%;
-  padding: fv(30);
+  padding: fv(40) fv(30);
 }
 
-  header {
-    margin-top: fv(30);
-    margin-left: fv(30);
-  }
+header {
+  margin-top: fv(40);
+  margin-left: fv(40);
+}
 
 .logo {
-  width: fv(100);
+  width: fv(130);
 }
 
 .content {
-  padding: 0;
+  padding-top: fv(84);
+  padding-bottom: fv(84);
 
-  &--pt {
-    padding-top: 0;
+  &--py {
+    padding-bottom: fv(84);
   }
 }
 
 .title {
   gap: fv(10);
-  font-size: fv(40);
-  line-height: lh(56, 40);
+  font-size: fv(50);
+  line-height: lh(68, 50);
 }
 
 .detail {
-  margin-top: fv(50);
+  margin-top: fv(60);
 }
+
+.rounded-btn {
+  font-size: fv(48);
+  padding: fv(20) fv(32) fv(6);
+}
+
 // E : common
 
 // S : page-1
+.obj {
+  width: fv(140);
+  margin-top: fv(80);
+}
+
 .start-btn {
+  margin-top: fv(80);
   padding-right: fv(28);
-  font-size: fv(44);
+  font-size: fv(52);
 
   &::after {
     width: fv(15);
@@ -51,66 +65,65 @@
 // S : page-2
 .input-box {
   > input {
-    width: fv(472);
-    padding: fv(4);
+    width: fv(520);
+    padding: fv(8);
     
-    font-size: fv(38);
+    font-size: fv(42);
   }
 }
 
 .info {
-  font-size: fv(26);
-}
-
-.submit-btn {
-  margin-top: fv(100);
+  font-size: fv(32);
 }
 // E : page-2
 
-// S : page-3/4
+// S : page-3
 .options {
-  grid-template-columns: repeat(2, minmax(fv(190), 1fr));
-  gap: fv(30);
-}
-// E : page-3/4
-
-// S : page-6
-.title {
-  white-space: pre;
-
-  &--mo {
-    display: block;
-    text-align: center;
-    > span {
-      display: inline-block;
-    }
-  }
+  gap: fv(26);
+  padding: 0 fv(40);
 }
 
+.option-btn {
+  padding: fv(26) fv(24) fv(18);
+  font-size: fv(42);
+  line-height: lh(52, 42);
+}
+
+.progress {
+  width: fv(340);
+}
+// E : page-3
+
+// S : page-4
+.sound {
+  transform: scale(1.2);
+}
+// E : page-4
+
+// S : page-5
 .img-box {
   flex-wrap: wrap;
-  gap: fv(20);
+  gap: fv(30);
   margin-top: fv(20);
 }
 
 .img {
-  height: fv(200); // 수정
-
   &-thumb {
-    width: fv(340);
+    width: fv(380);
+    height: fv(218);
   }
   &-code {
-    width: fv(200);
+    width: fv(218);
   }
 }
 
 .desc {
-  margin-top: fv(30);
-  font-size: fv(34);
-  line-height: lh(50, 34);
+  margin-top: fv(40);
+  font-size: fv(40);
+  line-height: lh(50, 40);
 }
 
 .reset-btn {
   margin-top: fv(100);
 }
-// E : page-6
+// E : page-5

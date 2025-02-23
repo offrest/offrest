@@ -1,23 +1,60 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useRouter } from "vue-router";
+import { ref, watch, computed } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import questionData from '@/data/questions.json';
 
+const route = useRoute();
 const router = useRouter();
-const selectedOption = ref(null);
 
-// 선택지를 고칠때는 나중에 여기만 고치면 됨
-const options = ['행복', '슬픔', '평온', '불안'];
+const questions = ref(questionData);
+const currentQuestion = ref({});
+const selectedAnswers = ref({
+  block1: [], // 질문 1번
+  block2: [], // 질문 2~4번
+  block3: [], // 질문 5~7번
+  block4: []  // 질문 8~10번
+});
 
-const selectOption = (option) => {
-  selectedOption.value = option;
-  localStorage.setItem('firstOption', selectedOption.value);
-  router.push("/page-4");
+const updateQuestion = () => {
+  const id = parseInt(route.params.id, 10);
+  const question = questions.value.find(q => q.id === id);
+  currentQuestion.value = question;
 };
 
-onMounted(() => {
-  localStorage.removeItem('firstOption');
-  selectedOption.value = null;
-});
+watch(() => route.params.id, updateQuestion, { immediate: true });
+
+const formattedText = computed(() => formatText(currentQuestion.value.text || ''));
+
+const selectOption = (option) => {
+  const id = parseInt(route.params.id, 10);
+  const question = questions.value.find(q => q.id === id);
+
+  // 질문 id에 따라 해당 블록 구분
+  let block;
+  if (id === 1) block = 'block1'; // 1번 질문은 block1
+  else if (id >= 2 && id <= 4) block = 'block2'; // 2~4번은 block2
+  else if (id >= 5 && id <= 7) block = 'block3'; // 5~7번은 block3
+  else if (id >= 8 && id <= 10) block = 'block4'; // 8~10번은 block4
+
+  const selectedKey = question.A === option ? 'A' : 'B';
+  selectedAnswers.value[block].push(selectedKey);
+  localStorage.setItem('answers', JSON.stringify(selectedAnswers.value));
+
+  const nextId = id + 1;
+  if (questions.value.some(q => q.id === nextId)) {
+    router.push(`/page-3/${nextId}`);
+  } else {
+    router.push('/page-4'); // 로딩페이지로 이동동
+  }
+};
+
+// 모바일만 줄바꿈 적용
+const formatText = (text) => {
+  return text
+    ? text
+      .replace(/\nmo/g, '<br class="mo-only"/>')
+  : '';
+};
 </script>
 
 <template>
@@ -29,34 +66,39 @@ onMounted(() => {
         </div>
       </header>
 
-      <div class="content">
+      <div class="content" v-if="currentQuestion.text">
+        <div class="progress">
+          <div
+            v-for="(question, index) in questions"
+            :key="index"
+            :class="['progress-bar', { active: index < currentQuestion.id }]"
+          ></div>
+        </div>
+
         <p class="title">
-          <span>Q2.</span>
-          <span>오늘의 기분은 어떠신가요?</span>
+          <span>Q{{ currentQuestion.id }}.</span>
+          <span v-html="formattedText"></span>
         </p>
 
         <div class="detail">
           <!-- 선택지 리스트 -->
           <div class="options">
             <button
-              v-for="option in options"
-              :key="option"
-              :class="['option-btn', { active: selectedOption === option }]"
+              v-for="(option, index) in [currentQuestion.A, currentQuestion.B]"
+              :key="index"
+              :class="['option-btn']"
               @click="selectOption(option)"
+              v-html="formatText(option)"
             >
-              {{ option }}
             </button>
-          </div>
-
-          <div class="selected-option" v-if="selectedOption">
-            <p>선택된 옵션: {{ selectedOption }}</p>
           </div>
         </div>
       </div>
+      <div v-else>질문을 찾을 수 없습니다.</div>
     </div>
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 
 </style>

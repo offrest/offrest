@@ -16,13 +16,14 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  server: {
+    host: '0.0.0.0',
+    port: 3000,
+    hmr: true,
+  },
   css: {
     preprocessorOptions: {
-      scss: {
-        // additionalData: `
-        //   @import "./src/styles/variables.scss";
-        // `,
-      },
+      scss: {},
     },
   },
 })

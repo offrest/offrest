@@ -1,0 +1,47 @@
+name: Deploy to offrest.github.io
+
+on:
+  push:
+    branches:
+      - hotfix/deploy  # hotfix/deploy 브랜치에 push할 때 실행
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout offrest
+        uses: actions/checkout@v3
+
+      - name: Install dependencies & Build
+        run: |
+          npm install
+          npm run build
+          
+      - name: Set Git config
+        run: |
+          git config --global user.name "leedoha11"
+          git config --global user.email "leedoha11@users.noreply.github.com"
+
+      # - name: Authenticate with GitHub using PAT
+      #   env:
+      #     GH_PAT: ${{ secrets.GH_PAT }}
+      #   run: |
+      #     git config --global user.name "leedoha11"
+      #     git config --global user.email "leedoha11@users.noreply.github.com"
+      #     git remote set-url origin https://x-access-token:${GH_PAT}@github.com/offrest/offrest.github.io.git
+
+      - name: Clone offrest.github.io
+        run: |
+          git clone https://github.com/offrest/offrest.github.io.git
+          cd offrest.github.io
+
+      - name: Deploy changes to offrest.github.io
+        env:
+           GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          cd offrest.github.io
+          cp -r ../dist/* .  # 빌드된 파일 복사
+          git add .
+          git commit -m "Deploy from offrest"
+          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/offrest/offrest.github.io.git
+          git push origin main

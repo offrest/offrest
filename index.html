@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js")
+            .then((reg) => console.log("Service Worker registered!", reg))
+            .catch((err) => console.log("Service Worker registration failed:", err));
+        });
+      }
+    </script>
     <meta charset="UTF-8">
     <link rel="icon" href="/offrest.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=yes">
     <title>OFFREST</title>
-    <script type="module" crossorigin src="/assets/index-H4nplmjN.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BEhDrbqV.css">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
